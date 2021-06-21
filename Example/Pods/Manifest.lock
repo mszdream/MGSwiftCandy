@@ -1,0 +1,27 @@
+PODS:
+  - MGSwiftCandy/Core (1.0.0)
+  - MGSwiftCandy/Extension (1.0.0):
+    - MGSwiftCandy/Core
+  - MGSwiftCandy/Tools (1.0.0):
+    - MGSwiftCandy/Extension
+  - SnapKit (4.2.0)
+
+DEPENDENCIES:
+  - MGSwiftCandy/Tools (from `../`)
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
+
+EXTERNAL SOURCES:
+  MGSwiftCandy:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MGSwiftCandy: a0cd801aafe2588d97def1e6fd91a70581eb96ad
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+
+PODFILE CHECKSUM: d2460dbfeb9ef14e74eff7cd092f3e0abfdb3e64
+
+COCOAPODS: 1.10.1

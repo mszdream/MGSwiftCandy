@@ -1,0 +1,6 @@
+framework module MGSwiftCandy {
+  umbrella header "MGSwiftCandy-umbrella.h"
+
+  export *
+  module * { export * }
+}

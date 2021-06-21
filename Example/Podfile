@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'MGSwiftCandy_Example' do
+  pod 'MGSwiftCandy/Tools', :path => '../'
+  pod 'SnapKit'
+
+  target 'MGSwiftCandy_Tests' do
+    inherit! :search_paths
+    
+  end
+end
