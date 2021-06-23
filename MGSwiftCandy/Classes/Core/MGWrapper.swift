@@ -28,7 +28,7 @@ public protocol MGWrapperEnable {}
 public extension MGWrapperEnable {
     var mg: MGWrapper_Mg<Self> {
         get { return MGWrapper_Mg.init(origin:self) }
-        set {}
+        set { self = newValue.origin }
     }
     
     static var mg: MGWrapper_Mg<Self>.Type {
@@ -43,13 +43,12 @@ protocol MGWrapper_One_GenericElement {
     
     var origin: MGOriginType { get }
 }
-
 public struct MGWrapper_One_Mg<MGOriginType: MGWrapperEnable_One_GenericElement, Element>: MGWrapper_One_GenericElement {
     typealias MGOriginType = MGOriginType
     
     internal var origin: MGOriginType
     
-    init(origin: inout MGOriginType) {
+    init(origin: MGOriginType) {
         self.origin = origin
     }
 }
@@ -59,8 +58,8 @@ public protocol MGWrapperEnable_One_GenericElement {
 }
 public extension MGWrapperEnable_One_GenericElement {
     var mg: MGWrapper_One_Mg<Self, Element> {
-        mutating get { return MGWrapper_One_Mg.init(origin:&self) }
-        set {}
+        get { return MGWrapper_One_Mg.init(origin: self) }
+        mutating set { self = newValue.origin }
     }
     
     static var mg: MGWrapper_One_Mg<Self, Element>.Type {
