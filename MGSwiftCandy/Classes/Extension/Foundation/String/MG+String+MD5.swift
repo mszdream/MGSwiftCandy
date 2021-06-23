@@ -8,8 +8,6 @@
 
 import Foundation
 
-extension MGString: MGWrapperEnable {}
-
 public extension MGWrapper_Mg where MGOriginType == MGString {
     var md5: MGString {
         if let data = origin.data(using: .utf8, allowLossyConversion: true) {

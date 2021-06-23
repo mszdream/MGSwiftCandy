@@ -25,6 +25,9 @@ class ViewController: MGBaseViewController {
         
         // MARK: - Tools
         addItem(title: "Eventer", className: "MGTestEventerViewController", section: 2)
+        
+        /// CoreGraphics
+        addItem(title: "Size", className: "MGTestSizeViewController", section: 3)
     }
     
     override func bindModel(cell: MGTableViewCellProtocol, model: MGModelProtocol) {
@@ -44,6 +47,8 @@ class ViewController: MGBaseViewController {
             return "UIKit"
         case 2:
             return "Tools"
+        case 3:
+            return "CoreGraphics"
         default:
             return nil
         }

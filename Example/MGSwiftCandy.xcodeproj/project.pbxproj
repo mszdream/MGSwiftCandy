@@ -27,6 +27,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		CE66C9D22683176100C34A73 /* MGTestSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66C9D12683176100C34A73 /* MGTestSizeViewController.swift */; };
 		CE9EBDC667ECE6ECC11718E8 /* Pods_MGSwiftCandy_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82FFFF121C4E068BF9771D45 /* Pods_MGSwiftCandy_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		82FFFF121C4E068BF9771D45 /* Pods_MGSwiftCandy_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MGSwiftCandy_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3CC11189133496515A58BA2 /* Pods-MGSwiftCandy_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGSwiftCandy_Tests.debug.xcconfig"; path = "Target Support Files/Pods-MGSwiftCandy_Tests/Pods-MGSwiftCandy_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C76501370DDE4CCA9E71C41E /* Pods-MGSwiftCandy_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGSwiftCandy_Example.debug.xcconfig"; path = "Target Support Files/Pods-MGSwiftCandy_Example/Pods-MGSwiftCandy_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		CE66C9D12683176100C34A73 /* MGTestSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGTestSizeViewController.swift; sourceTree = "<group>"; };
 		FA1A324D4C9A347DADECEC61 /* Pods-MGSwiftCandy_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGSwiftCandy_Tests.release.xcconfig"; path = "Target Support Files/Pods-MGSwiftCandy_Tests/Pods-MGSwiftCandy_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,6 +137,7 @@
 		2A7E1C142680C66F00C38E0D /* extension */ = {
 			isa = PBXGroup;
 			children = (
+				CE66C9CF2683174900C34A73 /* CoreGraphics */,
 				2A7E1C152680C66F00C38E0D /* UIKit */,
 				2A7E1C202680C66F00C38E0D /* Foundation */,
 			);
@@ -318,6 +321,22 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		CE66C9CF2683174900C34A73 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				CE66C9D02683175100C34A73 /* Size */,
+			);
+			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
+		CE66C9D02683175100C34A73 /* Size */ = {
+			isa = PBXGroup;
+			children = (
+				CE66C9D12683176100C34A73 /* MGTestSizeViewController.swift */,
+			);
+			path = Size;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -499,6 +518,7 @@
 				2A7E1C362680C66F00C38E0D /* MGTableViewControllerProtocol.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				2A7E1C332680C66F00C38E0D /* MGTestArrayViewController.swift in Sources */,
+				CE66C9D22683176100C34A73 /* MGTestSizeViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				2A7E1C322680C66F00C38E0D /* MGTestCodableViewController.swift in Sources */,
 				2A7E1C382680C66F00C38E0D /* MGTableViewCellProtocol.swift in Sources */,

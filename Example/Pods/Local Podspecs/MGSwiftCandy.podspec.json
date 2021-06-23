@@ -2,7 +2,7 @@
   "name": "MGSwiftCandy",
   "version": "1.0.0",
   "summary": "A swift candy library.",
-  "swift_versions": "4.0",
+  "swift_versions": "4.2",
   "description": "A swift candy library, Provides a large number of easy-to-use features.",
   "homepage": "https://github.com/mszdream/MGSwiftCandy",
   "license": {
@@ -43,5 +43,5 @@
       }
     }
   ],
-  "swift_version": "4.0"
+  "swift_version": "4.2"
 }

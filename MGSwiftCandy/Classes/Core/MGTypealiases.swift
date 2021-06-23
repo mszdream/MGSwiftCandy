@@ -15,6 +15,9 @@ public typealias MGBool = Bool
 // MARK: - Swift Math
 public typealias MGInt = Int
 
+// MARK: - CoreGraphics
+public typealias MGSize = CGSize
+
 // MARK: - Foundation
 public typealias MGDecodable = Decodable
 public typealias MGEncodable = Encodable

@@ -8,6 +8,8 @@
 
 import Foundation
 
+extension MGString: MGWrapperEnable {}
+
 // MARK: - Properties
 public extension MGWrapper_Mg where MGOriginType == MGString {
     /// String length
