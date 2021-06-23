@@ -11,7 +11,7 @@ import Foundation
 public class MGPrinter: MGWrapperEnable {}
 
 public extension MGWrapper_Mg where MGOriginType: MGPrinter {
-    /// print log info
+    /// Print log info into the output window
     /// - Parameters
     ///   - items: log info
     ///   - type: log type
@@ -36,7 +36,41 @@ public extension MGWrapper_Mg where MGOriginType: MGPrinter {
                     terminator: terminator,
                     function: function,
                     line: line,
-                    file: file)
+                    file: file,
+                    target: nil)
+    }
+    
+    /// Print log info into target
+    /// - Parameters
+    ///   - items: log info
+    ///   - type: log type
+    ///   - tag: log tag
+    ///   - separator: separator
+    ///   - terminator: terminator
+    ///   - function: Functions that trigger logs
+    ///   - file: File that trigger logs
+    ///   - line: Line that trigger logs
+    static func printer(_ items: Any?...,
+                        type: MGPrinterType = .debug,
+                        tag: String? = nil,
+                        separator: String = " ",
+                        terminator: String = "",
+                        function: String = #function,
+                        line: Int = #line,
+                        file: String = #file,
+                        target: inout String) {
+        let retString = MGOutStream()
+        CustomPrint(items,
+                    type: type,
+                    tag: tag,
+                    separator: separator,
+                    terminator: terminator,
+                    function: function,
+                    line: line,
+                    file: file,
+                    target: retString)
+        
+        target = retString.string
     }
 
     private static func CustomPrint(_ items: [Any?],
@@ -46,7 +80,8 @@ public extension MGWrapper_Mg where MGOriginType: MGPrinter {
                                     terminator: String,
                                     function: String,
                                     line: Int,
-                                    file: String) {
+                                    file: String,
+                                    target: MGOutStream?) {
         #if DEBUG
         let msgs = items.map({ (i) -> String in
             if let s = i as? String { return s }
@@ -64,7 +99,12 @@ public extension MGWrapper_Mg where MGOriginType: MGPrinter {
             "\(msgs.joined(separator: separator))",
             sep
         ]
-        print(results.joined(separator: "\n"), "\n", separator: separator, terminator: terminator)
+        
+        if var target = target {
+            print(results.joined(separator: "\n"), "\n", separator: separator, terminator: terminator, to: &target)
+        } else {
+            print(results.joined(separator: "\n"), "\n", separator: separator, terminator: terminator)
+        }
         #endif
     }
 
@@ -79,6 +119,13 @@ public extension MGWrapper_Mg where MGOriginType: MGPrinter {
 }
 
 public extension MGWrapper_Mg where MGOriginType: MGPrinter {
+    class MGOutStream: TextOutputStream {
+        public var string: String = ""
+        public func write(_ string: String) {
+            self.string = "\(self.string)\(string)"
+        }
+    }
+    
     enum MGPrinterType: Equatable {
         case debug
         case error

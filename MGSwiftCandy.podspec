@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MGSwiftCandy'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'A swift candy library.'
   s.swift_versions   = '4.2'
 

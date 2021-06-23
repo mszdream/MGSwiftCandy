@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  MGSwiftCandy
+//  MGSwiftCandy_Example
 //
 //  Created by mszdream on 06/21/2021.
 //  Copyright (c) 2021 mszdream. All rights reserved.
@@ -25,6 +25,7 @@ class ViewController: MGBaseViewController {
         
         // MARK: - Tools
         addItem(title: "Eventer", className: "MGTestEventerViewController", section: 2)
+        addItem(title: "Printer", className: "MGTestPrinterViewController", section: 2)
         
         /// CoreGraphics
         addItem(title: "Size", className: "MGTestSizeViewController", section: 3)

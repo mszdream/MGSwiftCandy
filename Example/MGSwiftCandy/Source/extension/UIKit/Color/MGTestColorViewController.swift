@@ -1,6 +1,6 @@
 //
 //  MGTestColorViewController.swift
-//  MGSwiftCandy
+//  MGSwiftCandy_Example
 //
 //  Created by mszdream on 2021/5/23.
 //  Copyright © 2021 mszdream. All rights reserved.

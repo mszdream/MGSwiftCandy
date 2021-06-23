@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A0E16E026836644006BE404 /* MGTestPrinterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0E16DF26836644006BE404 /* MGTestPrinterViewController.swift */; };
 		2A7E1C2C2680C66F00C38E0D /* MGTestEventerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E1C132680C66F00C38E0D /* MGTestEventerViewController.swift */; };
 		2A7E1C2D2680C66F00C38E0D /* MGTestColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E1C172680C66F00C38E0D /* MGTestColorViewController.swift */; };
 		2A7E1C2E2680C66F00C38E0D /* MGTestImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E1C192680C66F00C38E0D /* MGTestImageViewController.swift */; };
@@ -45,6 +46,7 @@
 		12A8536F41DC2BF4E8374760 /* Pods_MGSwiftCandy_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MGSwiftCandy_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		136DA1D7D8C1BC9E6C94BB7E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		22935CAEFECBA27EAE6B573B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		2A0E16DF26836644006BE404 /* MGTestPrinterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGTestPrinterViewController.swift; sourceTree = "<group>"; };
 		2A7E1C132680C66F00C38E0D /* MGTestEventerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGTestEventerViewController.swift; sourceTree = "<group>"; };
 		2A7E1C172680C66F00C38E0D /* MGTestColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGTestColorViewController.swift; sourceTree = "<group>"; };
 		2A7E1C192680C66F00C38E0D /* MGTestImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGTestImageViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		2A0E16DE2683662F006BE404 /* Printer */ = {
+			isa = PBXGroup;
+			children = (
+				2A0E16DF26836644006BE404 /* MGTestPrinterViewController.swift */,
+			);
+			path = Printer;
+			sourceTree = "<group>";
+		};
 		2A7E1C102680C66F00C38E0D /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +131,7 @@
 		2A7E1C112680C66F00C38E0D /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				2A0E16DE2683662F006BE404 /* Printer */,
 				2A7E1C122680C66F00C38E0D /* Eventer */,
 			);
 			path = Tools;
@@ -512,6 +523,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A7E1C2D2680C66F00C38E0D /* MGTestColorViewController.swift in Sources */,
+				2A0E16E026836644006BE404 /* MGTestPrinterViewController.swift in Sources */,
 				2A7E1C2C2680C66F00C38E0D /* MGTestEventerViewController.swift in Sources */,
 				2A7E1C2F2680C66F00C38E0D /* MGTestButtonViewController.swift in Sources */,
 				2A7E1C352680C66F00C38E0D /* MGBaseViewController.swift in Sources */,

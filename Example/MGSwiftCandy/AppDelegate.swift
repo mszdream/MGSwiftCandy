@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  MGSwiftCandy
+//  MGSwiftCandy_Example
 //
 //  Created by mszdream on 06/21/2021.
 //  Copyright (c) 2021 mszdream. All rights reserved.
