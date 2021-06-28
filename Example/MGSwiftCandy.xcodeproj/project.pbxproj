@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A0E16E026836644006BE404 /* MGTestPrinterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0E16DF26836644006BE404 /* MGTestPrinterViewController.swift */; };
+		2A5FBD8C2688AB7B00690056 /* MGTestKeychainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5FBD8B2688AB7B00690056 /* MGTestKeychainViewController.swift */; };
 		2A7E1C2C2680C66F00C38E0D /* MGTestEventerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E1C132680C66F00C38E0D /* MGTestEventerViewController.swift */; };
 		2A7E1C2D2680C66F00C38E0D /* MGTestColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E1C172680C66F00C38E0D /* MGTestColorViewController.swift */; };
 		2A7E1C2E2680C66F00C38E0D /* MGTestImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E1C192680C66F00C38E0D /* MGTestImageViewController.swift */; };
@@ -47,6 +48,7 @@
 		136DA1D7D8C1BC9E6C94BB7E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		22935CAEFECBA27EAE6B573B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		2A0E16DF26836644006BE404 /* MGTestPrinterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGTestPrinterViewController.swift; sourceTree = "<group>"; };
+		2A5FBD8B2688AB7B00690056 /* MGTestKeychainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGTestKeychainViewController.swift; sourceTree = "<group>"; };
 		2A7E1C132680C66F00C38E0D /* MGTestEventerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGTestEventerViewController.swift; sourceTree = "<group>"; };
 		2A7E1C172680C66F00C38E0D /* MGTestColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGTestColorViewController.swift; sourceTree = "<group>"; };
 		2A7E1C192680C66F00C38E0D /* MGTestImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGTestImageViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,14 @@
 			path = Printer;
 			sourceTree = "<group>";
 		};
+		2A5FBD8A2688AB6A00690056 /* keychain */ = {
+			isa = PBXGroup;
+			children = (
+				2A5FBD8B2688AB7B00690056 /* MGTestKeychainViewController.swift */,
+			);
+			path = keychain;
+			sourceTree = "<group>";
+		};
 		2A7E1C102680C66F00C38E0D /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +141,7 @@
 		2A7E1C112680C66F00C38E0D /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				2A5FBD8A2688AB6A00690056 /* keychain */,
 				2A0E16DE2683662F006BE404 /* Printer */,
 				2A7E1C122680C66F00C38E0D /* Eventer */,
 			);
@@ -530,6 +541,7 @@
 				2A7E1C362680C66F00C38E0D /* MGTableViewControllerProtocol.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				2A7E1C332680C66F00C38E0D /* MGTestArrayViewController.swift in Sources */,
+				2A5FBD8C2688AB7B00690056 /* MGTestKeychainViewController.swift in Sources */,
 				CE66C9D22683176100C34A73 /* MGTestSizeViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				2A7E1C322680C66F00C38E0D /* MGTestCodableViewController.swift in Sources */,
@@ -692,6 +704,7 @@
 			baseConfigurationReference = C76501370DDE4CCA9E71C41E /* Pods-MGSwiftCandy_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
 				INFOPLIST_FILE = MGSwiftCandy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -707,6 +720,7 @@
 			baseConfigurationReference = 4AA7768E43514A5993846AB4 /* Pods-MGSwiftCandy_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
 				INFOPLIST_FILE = MGSwiftCandy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;

@@ -1,8 +1,8 @@
 PODS:
-  - MGSwiftCandy/Core (1.0.0)
-  - MGSwiftCandy/Extension (1.0.0):
+  - MGSwiftCandy/Core (1.0.1)
+  - MGSwiftCandy/Extension (1.0.1):
     - MGSwiftCandy/Core
-  - MGSwiftCandy/Tools (1.0.0):
+  - MGSwiftCandy/Tools (1.0.1):
     - MGSwiftCandy/Extension
   - SnapKit (4.2.0)
 
@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MGSwiftCandy: 5b955dfd997ee10e10c89c80bef465e49e6c2ed1
+  MGSwiftCandy: 72d3998faa90e82bf3ac193a85cafe720dc51d75
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
 PODFILE CHECKSUM: b3fd4e187814cf3102283d64f3894348771f6cc2
