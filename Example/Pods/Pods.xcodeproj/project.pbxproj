@@ -22,6 +22,7 @@
 		2653A27A62B95B953FED16B87B995186 /* MGPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECFCE512AFE8C70F0A7131DDD1AC735 /* MGPrinter.swift */; };
 		276EE563D9B688173DBBF47DB80D72D8 /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7413D1E3B3849A8B98CECBCB1E3EA510 /* ConstraintLayoutGuideDSL.swift */; };
 		28400157B63F40AA135BF16780AB4B96 /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 42EDC7C7A525E5D5191CA0B7A731184D /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A43DDEE268B61010074AE8E /* MGUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A43DDED268B61010074AE8E /* MGUserDefaults.swift */; };
 		2A63A1C00900C9C50E1441611FEFC1B8 /* MGSwiftCandy-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBF70A069C25495E0153773095859E /* MGSwiftCandy-dummy.m */; };
 		35CDFA197D8219EB8DEFC227259A5C03 /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E887F5BC85E664CAF1EAD58DB6EF027D /* ConstraintMakerRelatable.swift */; };
 		4268E348E6D5E9037A640ADC8E065009 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CC484A3E4DD46665D9EF06679B007 /* ConstraintMakerEditable.swift */; };
@@ -106,7 +107,7 @@
 		00EFECCF7F4E78B3021A97741173FC2F /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
 		09C2F3330EB4A39DC3B20B40D8981F66 /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Source/ConstraintViewDSL.swift; sourceTree = "<group>"; };
 		0BDF5E126E3C473FE71F3640A4E768A1 /* Pods-MGSwiftCandy_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MGSwiftCandy_Tests-dummy.m"; sourceTree = "<group>"; };
-		0D6B7B5615C46414319C3C9D824A5FCA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		0D6B7B5615C46414319C3C9D824A5FCA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0DB9694E5BA014BF189151A5BD2E1B1E /* Pods-MGSwiftCandy_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MGSwiftCandy_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		103B8B35502B427E3F46D5237C681DCB /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
 		133260408F8E225762E65279B69BE9CE /* MGCreate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MGCreate.swift; path = MGSwiftCandy/Classes/Core/MGCreate.swift; sourceTree = "<group>"; };
@@ -117,8 +118,9 @@
 		2117EA149E76AA5911EC3A014E774E2F /* MG+Image+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "MG+Image+Extension.swift"; sourceTree = "<group>"; };
 		24512E06319F57AB9DDBB22A97847B34 /* MGSwiftCandy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MGSwiftCandy.debug.xcconfig; sourceTree = "<group>"; };
 		29693EC049D6AC1AE94A7B743D01A9AB /* SnapKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.debug.xcconfig; sourceTree = "<group>"; };
+		2A43DDED268B61010074AE8E /* MGUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGUserDefaults.swift; sourceTree = "<group>"; };
 		2DD3AEA28A2E90217AD3BA337D86E1A8 /* MGSwiftCandy-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MGSwiftCandy-prefix.pch"; sourceTree = "<group>"; };
-		2F5B9548236B1E0131D1CB83C6A1C67C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		2F5B9548236B1E0131D1CB83C6A1C67C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		33A86CE70FD6CC2D28451CA3187E5FDF /* Pods-MGSwiftCandy_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MGSwiftCandy_Tests-Info.plist"; sourceTree = "<group>"; };
 		37C50985BFB55757A816C15E868B175B /* Pods-MGSwiftCandy_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MGSwiftCandy_Example.release.xcconfig"; sourceTree = "<group>"; };
 		37F1A25F3C9883F6A0A4428D8AFC44B2 /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Source/ConstraintPriority.swift; sourceTree = "<group>"; };
@@ -150,7 +152,7 @@
 		7A3284DB6C9BFEF88606695BBC11E150 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
 		7D20E942168ECFCEE6E8E55993D26F0F /* MG+Button+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "MG+Button+Extension.swift"; sourceTree = "<group>"; };
 		807F5279ECA1E77BEC4455F1645BF6D7 /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Source/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
-		819AF8EACCAEBF2EF25655A1978E8BE0 /* MGSwiftCandy.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MGSwiftCandy.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		819AF8EACCAEBF2EF25655A1978E8BE0 /* MGSwiftCandy.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = MGSwiftCandy.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		848E9BA38AE7A77B37C78B343E836974 /* SnapKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapKit-Info.plist"; sourceTree = "<group>"; };
 		864FF77CF1D37010722B7C0B52E0FC56 /* Pods-MGSwiftCandy_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MGSwiftCandy_Example-dummy.m"; sourceTree = "<group>"; };
 		8C80000E1CA4369B2E82035A1825982D /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
@@ -159,10 +161,10 @@
 		8FBBF70A069C25495E0153773095859E /* MGSwiftCandy-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MGSwiftCandy-dummy.m"; sourceTree = "<group>"; };
 		91102F716DCE9969F79474488AEA2BFD /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Source/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
 		91CDB65824D1A25ADF2F54D948E912F9 /* Pods-MGSwiftCandy_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MGSwiftCandy_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		95D209BFFEDE9E7002337D53E42254CF /* MGSwiftCandy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MGSwiftCandy.framework; path = MGSwiftCandy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		979486118B3E90C08386079D57962701 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95D209BFFEDE9E7002337D53E42254CF /* MGSwiftCandy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MGSwiftCandy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		979486118B3E90C08386079D57962701 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE2E47CB82394569A30CA9BBC8431FC /* MGKeychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MGKeychain.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E950DF414BE76C1B202E9C1734FE2FC /* MGSwiftCandy-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MGSwiftCandy-umbrella.h"; sourceTree = "<group>"; };
 		9F541BE310537720F8C97A4F799212CA /* MG+Screen+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "MG+Screen+Extension.swift"; sourceTree = "<group>"; };
 		A3499D06B7741051669EFC6E6A929A57 /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConfig.swift; path = Source/ConstraintConfig.swift; sourceTree = "<group>"; };
@@ -180,7 +182,7 @@
 		BAA070155DE459F51A650261C10EA9CB /* ConstraintDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDSL.swift; path = Source/ConstraintDSL.swift; sourceTree = "<group>"; };
 		BEAD3EFBE8B654F72065AD4E0F5E0F0C /* MGSwiftCandy.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MGSwiftCandy.modulemap; sourceTree = "<group>"; };
 		BECFCE512AFE8C70F0A7131DDD1AC735 /* MGPrinter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MGPrinter.swift; sourceTree = "<group>"; };
-		C7218055F470F08115AAE3BAB328162B /* Pods_MGSwiftCandy_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MGSwiftCandy_Example.framework; path = "Pods-MGSwiftCandy_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7218055F470F08115AAE3BAB328162B /* Pods_MGSwiftCandy_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MGSwiftCandy_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C89552C29B3090667057D8E56D2C3D81 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Source/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
 		C8D6B4E640B3D09C454814F36856E2EE /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
 		D0D8610217E033F12A628571FD3D1684 /* Typealiases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Typealiases.swift; path = Source/Typealiases.swift; sourceTree = "<group>"; };
@@ -195,7 +197,7 @@
 		E3564DC0F66B910A102F9E31599BDC29 /* MG+Array+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "MG+Array+Extension.swift"; sourceTree = "<group>"; };
 		E887F5BC85E664CAF1EAD58DB6EF027D /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerRelatable.swift; path = Source/ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
 		ED925D670FC3741EDB8AA215ECE8AAC1 /* MGWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MGWrapper.swift; path = MGSwiftCandy/Classes/Core/MGWrapper.swift; sourceTree = "<group>"; };
-		EDBE515BFE133BE89718E89E5025D734 /* Pods_MGSwiftCandy_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MGSwiftCandy_Tests.framework; path = "Pods-MGSwiftCandy_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDBE515BFE133BE89718E89E5025D734 /* Pods_MGSwiftCandy_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MGSwiftCandy_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F74E8B1B0DFA94A55EB102C1A9B94646 /* MG+Codable+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "MG+Codable+Extension.swift"; sourceTree = "<group>"; };
 		FB3146B382C3292E28917B8CF4356923 /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Source/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -241,7 +243,6 @@
 			children = (
 				A8E29C119F5E864E37FBC5B9FBE52FAC /* MG+Size+Extension.swift */,
 			);
-			name = Size;
 			path = Size;
 			sourceTree = "<group>";
 		};
@@ -250,7 +251,6 @@
 			children = (
 				E3564DC0F66B910A102F9E31599BDC29 /* MG+Array+Extension.swift */,
 			);
-			name = Struct;
 			path = Struct;
 			sourceTree = "<group>";
 		};
@@ -268,7 +268,6 @@
 			children = (
 				2117EA149E76AA5911EC3A014E774E2F /* MG+Image+Extension.swift */,
 			);
-			name = Image;
 			path = Image;
 			sourceTree = "<group>";
 		};
@@ -277,7 +276,6 @@
 			children = (
 				8DE95193057890BEB1EC7CAA2CB38AEB /* MG+Color+Extension.swift */,
 			);
-			name = Color;
 			path = Color;
 			sourceTree = "<group>";
 		};
@@ -299,6 +297,14 @@
 				ED925D670FC3741EDB8AA215ECE8AAC1 /* MGWrapper.swift */,
 			);
 			name = Core;
+			sourceTree = "<group>";
+		};
+		2A43DDEC268B60DA0074AE8E /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				2A43DDED268B61010074AE8E /* MGUserDefaults.swift */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 		3DBBE51C46F2CE7FA15F3E133728A993 /* Tools */ = {
@@ -340,7 +346,6 @@
 				756BC7E98F76A336DB6E38F618853F6C /* MG+View+Method.swift */,
 				B4E1B156D0903541177026668C9742B9 /* MG+View+Property.swift */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -357,7 +362,6 @@
 			children = (
 				9F541BE310537720F8C97A4F799212CA /* MG+Screen+Extension.swift */,
 			);
-			name = Screen;
 			path = Screen;
 			sourceTree = "<group>";
 		};
@@ -407,7 +411,6 @@
 			children = (
 				7D20E942168ECFCEE6E8E55993D26F0F /* MG+Button+Extension.swift */,
 			);
-			name = Button;
 			path = Button;
 			sourceTree = "<group>";
 		};
@@ -428,7 +431,6 @@
 				B5C675E36FB90069D96F9A8B396DB7DA /* MG+String+Extension.swift */,
 				1C6773F98220606691BA042EC5FED0F0 /* MG+String+MD5.swift */,
 			);
-			name = String;
 			path = String;
 			sourceTree = "<group>";
 		};
@@ -467,7 +469,6 @@
 			children = (
 				F74E8B1B0DFA94A55EB102C1A9B94646 /* MG+Codable+Extension.swift */,
 			);
-			name = Codable;
 			path = Codable;
 			sourceTree = "<group>";
 		};
@@ -487,13 +488,13 @@
 			children = (
 				A059DB17276E9D4375B5CC58CC4EC2B5 /* Codable */,
 			);
-			name = Protocol;
 			path = Protocol;
 			sourceTree = "<group>";
 		};
 		AF86CB11D7F94AE2730C7F5B731A4398 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				2A43DDEC268B60DA0074AE8E /* UserDefaults */,
 				2952614DA2E16FF3D2181693359B28E7 /* Eventer */,
 				F111DE5C2EE562160AAB29A27D2B208D /* keychain */,
 				FA122B49EE0880AE1F764D5E14B4C8DF /* Printer */,
@@ -554,7 +555,6 @@
 				4DCD15E7A2AFE53263B4335C9B3D9813 /* UILayoutSupport+Extensions.swift */,
 				D28E246011041898C1EA6C3AAF01971C /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -612,7 +612,6 @@
 			children = (
 				7A1317A0EA3608EE1CD3745D4FB8889B /* MG+ViewController+Extension.swift */,
 			);
-			name = ViewController;
 			path = ViewController;
 			sourceTree = "<group>";
 		};
@@ -831,6 +830,7 @@
 				4B903205FB7C934B8A86BB80C05569F3 /* MGEventer.swift in Sources */,
 				60ADD79581BA4C94094EECC43B8228BF /* MGKeychain.swift in Sources */,
 				2653A27A62B95B953FED16B87B995186 /* MGPrinter.swift in Sources */,
+				2A43DDEE268B61010074AE8E /* MGUserDefaults.swift in Sources */,
 				8E7BB352E0B257044CC504E698C4861F /* MGRecursiveLock.swift in Sources */,
 				2A63A1C00900C9C50E1441611FEFC1B8 /* MGSwiftCandy-dummy.m in Sources */,
 				B7065B140EF6793469AEE521D8958BFE /* MGTools.swift in Sources */,
@@ -1294,8 +1294,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

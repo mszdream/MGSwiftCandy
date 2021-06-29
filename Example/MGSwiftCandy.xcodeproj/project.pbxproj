@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A0E16E026836644006BE404 /* MGTestPrinterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0E16DF26836644006BE404 /* MGTestPrinterViewController.swift */; };
+		2A43DDF1268B66030074AE8E /* MGTestUserDefaultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A43DDF0268B66030074AE8E /* MGTestUserDefaultsViewController.swift */; };
 		2A5FBD8C2688AB7B00690056 /* MGTestKeychainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5FBD8B2688AB7B00690056 /* MGTestKeychainViewController.swift */; };
 		2A7E1C2C2680C66F00C38E0D /* MGTestEventerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E1C132680C66F00C38E0D /* MGTestEventerViewController.swift */; };
 		2A7E1C2D2680C66F00C38E0D /* MGTestColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E1C172680C66F00C38E0D /* MGTestColorViewController.swift */; };
@@ -48,6 +49,7 @@
 		136DA1D7D8C1BC9E6C94BB7E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		22935CAEFECBA27EAE6B573B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		2A0E16DF26836644006BE404 /* MGTestPrinterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGTestPrinterViewController.swift; sourceTree = "<group>"; };
+		2A43DDF0268B66030074AE8E /* MGTestUserDefaultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGTestUserDefaultsViewController.swift; sourceTree = "<group>"; };
 		2A5FBD8B2688AB7B00690056 /* MGTestKeychainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGTestKeychainViewController.swift; sourceTree = "<group>"; };
 		2A7E1C132680C66F00C38E0D /* MGTestEventerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGTestEventerViewController.swift; sourceTree = "<group>"; };
 		2A7E1C172680C66F00C38E0D /* MGTestColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGTestColorViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,14 @@
 			path = Printer;
 			sourceTree = "<group>";
 		};
+		2A43DDEF268B65E00074AE8E /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				2A43DDF0268B66030074AE8E /* MGTestUserDefaultsViewController.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
 		2A5FBD8A2688AB6A00690056 /* keychain */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +151,7 @@
 		2A7E1C112680C66F00C38E0D /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				2A43DDEF268B65E00074AE8E /* UserDefaults */,
 				2A5FBD8A2688AB6A00690056 /* keychain */,
 				2A0E16DE2683662F006BE404 /* Printer */,
 				2A7E1C122680C66F00C38E0D /* Eventer */,
@@ -543,6 +554,7 @@
 				2A7E1C332680C66F00C38E0D /* MGTestArrayViewController.swift in Sources */,
 				2A5FBD8C2688AB7B00690056 /* MGTestKeychainViewController.swift in Sources */,
 				CE66C9D22683176100C34A73 /* MGTestSizeViewController.swift in Sources */,
+				2A43DDF1268B66030074AE8E /* MGTestUserDefaultsViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				2A7E1C322680C66F00C38E0D /* MGTestCodableViewController.swift in Sources */,
 				2A7E1C382680C66F00C38E0D /* MGTableViewCellProtocol.swift in Sources */,

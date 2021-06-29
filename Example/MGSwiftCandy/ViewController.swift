@@ -27,6 +27,7 @@ class ViewController: MGBaseViewController {
         addItem(title: "Eventer", className: "MGTestEventerViewController", section: 2)
         addItem(title: "Printer", className: "MGTestPrinterViewController", section: 2)
         addItem(title: "Keychain", className: "MGTestKeychainViewController", section: 2)
+        addItem(title: "UserDefaults", className: "MGTestUserDefaultsViewController", section: 2)
         
         /// CoreGraphics
         addItem(title: "Size", className: "MGTestSizeViewController", section: 3)
