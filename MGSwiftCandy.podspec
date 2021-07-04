@@ -8,9 +8,9 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MGSwiftCandy'
-  s.version          = '1.0.1'
+  s.version          = '1.1.0'
   s.summary          = 'A swift candy library.'
-  s.swift_versions   = '4.2'
+  s.swift_versions   = '4.0'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?

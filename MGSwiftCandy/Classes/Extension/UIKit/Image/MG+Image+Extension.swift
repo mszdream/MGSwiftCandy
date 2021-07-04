@@ -49,9 +49,13 @@ public extension MGWrapper_Mg where MGOriginType: MGImage {
         }
         
         // Get the original picture
-        let input = MGImage(cgImage: cgImage)
+        let input = CIImage(cgImage: cgImage)
         // Using Gaussian Blur filter
+        #if swift(<4.2)
+        let filter = CIFilter(name: "CIGaussianBlur", withInputParameters: [kCIInputImageKey: input])
+        #else
         let filter = CIFilter(name: "CIGaussianBlur", parameters: [kCIInputImageKey: input])
+        #endif
         // Set the blur radius value(the bigger, The more blurred).
         filter?.setValue(blurRadius, forKey: kCIInputRadiusKey)
         // Blurred image of ciimage type
@@ -120,7 +124,11 @@ public extension MGWrapper_Mg where MGOriginType: MGImage {
     /// - Returns:
     ///   - Optional Data (if applicable).
     func compressedData(quality: MGCGFloat = 0.5) -> MGData? {
+        #if swift(<4.2)
+        return UIImageJPEGRepresentation(origin, quality)
+        #else
         return origin.jpegData(compressionQuality: quality)
+        #endif
     }
     
 }
