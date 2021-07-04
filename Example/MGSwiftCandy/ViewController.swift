@@ -11,26 +11,37 @@ import MGSwiftCandy
 
 class ViewController: MGBaseViewController {
     override func generatingData() {
-        // MARK: - Foundation
-        addItem(title: "Codable", className: "MGTestCodableViewController", section: 0)
-        addItem(title: "Array", className: "MGTestArrayViewController", section: 0)
-        addItem(title: "String", className: "MGTestStringViewController", section: 0)
-        
-        // MARK: - UIKit
-        addItem(title: "Color", className: "MGTestColorViewController", section: 1)
-        addItem(title: "Image", className: "MGTestImageViewController", section: 1)
-        addItem(title: "View", className: "MGTestViewViewController", section: 1)
-        addItem(title: "Screen", className: "MGTestScreenViewController", section: 1)
-        addItem(title: "Button", className: "MGTestButtonViewController", section: 1)
+        // MARK: - Extension
+        do {
+            /// CoreGraphics
+            addItem(title: "Size", className: "MGTestSizeViewController", section: 0)
+            
+            // MARK: - Foundation
+            addItem(title: "Codable", className: "MGTestCodableViewController", section: 1)
+            addItem(title: "Array", className: "MGTestArrayViewController", section: 1)
+            
+            // MARK: - Swift
+            addItem(title: "Bool", className: "MGTestBoolViewController", section: 2)
+            addItem(title: "Double", className: "MGTestDoubleViewController", section: 2)
+            addItem(title: "Float", className: "MGTestFloatViewController", section: 2)
+            addItem(title: "Int", className: "MGTestIntViewController", section: 2)
+            addItem(title: "String", className: "MGTestStringViewController", section: 2)
+            
+            // MARK: - UIKit
+            addItem(title: "Color", className: "MGTestColorViewController", section: 3)
+            addItem(title: "Image", className: "MGTestImageViewController", section: 3)
+            addItem(title: "View", className: "MGTestViewViewController", section: 3)
+            addItem(title: "Screen", className: "MGTestScreenViewController", section: 3)
+            addItem(title: "Button", className: "MGTestButtonViewController", section: 3)
+        }
         
         // MARK: - Tools
-        addItem(title: "Eventer", className: "MGTestEventerViewController", section: 2)
-        addItem(title: "Printer", className: "MGTestPrinterViewController", section: 2)
-        addItem(title: "Keychain", className: "MGTestKeychainViewController", section: 2)
-        addItem(title: "UserDefaults", className: "MGTestUserDefaultsViewController", section: 2)
-        
-        /// CoreGraphics
-        addItem(title: "Size", className: "MGTestSizeViewController", section: 3)
+        do {
+            addItem(title: "Eventer", className: "MGTestEventerViewController", section: 4)
+            addItem(title: "Printer", className: "MGTestPrinterViewController", section: 4)
+            addItem(title: "Keychain", className: "MGTestKeychainViewController", section: 4)
+            addItem(title: "UserDefaults", className: "MGTestUserDefaultsViewController", section: 4)
+        }
     }
     
     override func bindModel(cell: MGTableViewCellProtocol, model: MGModelProtocol) {
@@ -45,13 +56,15 @@ class ViewController: MGBaseViewController {
     override func title(section: Int) -> String? {
         switch section {
         case 0:
-            return "Foundation"
-        case 1:
-            return "UIKit"
-        case 2:
-            return "Tools"
-        case 3:
             return "CoreGraphics"
+        case 1:
+            return "Foundation"
+        case 2:
+            return "Swift"
+        case 3:
+            return "UIKit"
+        case 4:
+            return "Tools"
         default:
             return nil
         }

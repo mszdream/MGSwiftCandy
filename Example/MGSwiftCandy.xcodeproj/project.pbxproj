@@ -10,6 +10,10 @@
 		2A0E16E026836644006BE404 /* MGTestPrinterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0E16DF26836644006BE404 /* MGTestPrinterViewController.swift */; };
 		2A43DDF1268B66030074AE8E /* MGTestUserDefaultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A43DDF0268B66030074AE8E /* MGTestUserDefaultsViewController.swift */; };
 		2A5FBD8C2688AB7B00690056 /* MGTestKeychainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5FBD8B2688AB7B00690056 /* MGTestKeychainViewController.swift */; };
+		2A6D773B2691676800847FFD /* MGTestIntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6D773A2691676800847FFD /* MGTestIntViewController.swift */; };
+		2A6D773D2691678100847FFD /* MGTestFloatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6D773C2691678100847FFD /* MGTestFloatViewController.swift */; };
+		2A6D773F2691679300847FFD /* MGTestDoubleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6D773E2691679300847FFD /* MGTestDoubleViewController.swift */; };
+		2A6D7741269167B300847FFD /* MGTestBoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6D7740269167B300847FFD /* MGTestBoolViewController.swift */; };
 		2A7E1C2C2680C66F00C38E0D /* MGTestEventerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E1C132680C66F00C38E0D /* MGTestEventerViewController.swift */; };
 		2A7E1C2D2680C66F00C38E0D /* MGTestColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E1C172680C66F00C38E0D /* MGTestColorViewController.swift */; };
 		2A7E1C2E2680C66F00C38E0D /* MGTestImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E1C192680C66F00C38E0D /* MGTestImageViewController.swift */; };
@@ -51,6 +55,10 @@
 		2A0E16DF26836644006BE404 /* MGTestPrinterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGTestPrinterViewController.swift; sourceTree = "<group>"; };
 		2A43DDF0268B66030074AE8E /* MGTestUserDefaultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGTestUserDefaultsViewController.swift; sourceTree = "<group>"; };
 		2A5FBD8B2688AB7B00690056 /* MGTestKeychainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGTestKeychainViewController.swift; sourceTree = "<group>"; };
+		2A6D773A2691676800847FFD /* MGTestIntViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGTestIntViewController.swift; sourceTree = "<group>"; };
+		2A6D773C2691678100847FFD /* MGTestFloatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGTestFloatViewController.swift; sourceTree = "<group>"; };
+		2A6D773E2691679300847FFD /* MGTestDoubleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGTestDoubleViewController.swift; sourceTree = "<group>"; };
+		2A6D7740269167B300847FFD /* MGTestBoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGTestBoolViewController.swift; sourceTree = "<group>"; };
 		2A7E1C132680C66F00C38E0D /* MGTestEventerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGTestEventerViewController.swift; sourceTree = "<group>"; };
 		2A7E1C172680C66F00C38E0D /* MGTestColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGTestColorViewController.swift; sourceTree = "<group>"; };
 		2A7E1C192680C66F00C38E0D /* MGTestImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGTestImageViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +146,50 @@
 			path = keychain;
 			sourceTree = "<group>";
 		};
+		2A6D7729269163FE00847FFD /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				2A6D7739269166F200847FFD /* Bool */,
+				2A6D7738269166E900847FFD /* Double */,
+				2A6D7737269166DC00847FFD /* Float */,
+				2A6D7736269166D400847FFD /* Int */,
+				2A7E1C252680C66F00C38E0D /* String */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		2A6D7736269166D400847FFD /* Int */ = {
+			isa = PBXGroup;
+			children = (
+				2A6D773A2691676800847FFD /* MGTestIntViewController.swift */,
+			);
+			path = Int;
+			sourceTree = "<group>";
+		};
+		2A6D7737269166DC00847FFD /* Float */ = {
+			isa = PBXGroup;
+			children = (
+				2A6D773C2691678100847FFD /* MGTestFloatViewController.swift */,
+			);
+			path = Float;
+			sourceTree = "<group>";
+		};
+		2A6D7738269166E900847FFD /* Double */ = {
+			isa = PBXGroup;
+			children = (
+				2A6D773E2691679300847FFD /* MGTestDoubleViewController.swift */,
+			);
+			path = Double;
+			sourceTree = "<group>";
+		};
+		2A6D7739269166F200847FFD /* Bool */ = {
+			isa = PBXGroup;
+			children = (
+				2A6D7740269167B300847FFD /* MGTestBoolViewController.swift */,
+			);
+			path = Bool;
+			sourceTree = "<group>";
+		};
 		2A7E1C102680C66F00C38E0D /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +222,7 @@
 		2A7E1C142680C66F00C38E0D /* extension */ = {
 			isa = PBXGroup;
 			children = (
+				2A6D7729269163FE00847FFD /* Swift */,
 				CE66C9CF2683174900C34A73 /* CoreGraphics */,
 				2A7E1C152680C66F00C38E0D /* UIKit */,
 				2A7E1C202680C66F00C38E0D /* Foundation */,
@@ -234,7 +287,6 @@
 			children = (
 				2A7E1C212680C66F00C38E0D /* Codable */,
 				2A7E1C232680C66F00C38E0D /* struct */,
-				2A7E1C252680C66F00C38E0D /* String */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -550,11 +602,14 @@
 				2A7E1C2F2680C66F00C38E0D /* MGTestButtonViewController.swift in Sources */,
 				2A7E1C352680C66F00C38E0D /* MGBaseViewController.swift in Sources */,
 				2A7E1C362680C66F00C38E0D /* MGTableViewControllerProtocol.swift in Sources */,
+				2A6D773B2691676800847FFD /* MGTestIntViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				2A7E1C332680C66F00C38E0D /* MGTestArrayViewController.swift in Sources */,
 				2A5FBD8C2688AB7B00690056 /* MGTestKeychainViewController.swift in Sources */,
 				CE66C9D22683176100C34A73 /* MGTestSizeViewController.swift in Sources */,
 				2A43DDF1268B66030074AE8E /* MGTestUserDefaultsViewController.swift in Sources */,
+				2A6D773F2691679300847FFD /* MGTestDoubleViewController.swift in Sources */,
+				2A6D773D2691678100847FFD /* MGTestFloatViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				2A7E1C322680C66F00C38E0D /* MGTestCodableViewController.swift in Sources */,
 				2A7E1C382680C66F00C38E0D /* MGTableViewCellProtocol.swift in Sources */,
@@ -563,6 +618,7 @@
 				2A7E1C342680C66F00C38E0D /* MGTestStringViewController.swift in Sources */,
 				2A7E1C312680C66F00C38E0D /* MGTestViewViewController.swift in Sources */,
 				2A7E1C372680C66F00C38E0D /* MGModelProtocol.swift in Sources */,
+				2A6D7741269167B300847FFD /* MGTestBoolViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

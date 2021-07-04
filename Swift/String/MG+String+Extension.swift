@@ -13,12 +13,12 @@ extension MGString: MGWrapperEnable {}
 // MARK: - Properties
 public extension MGWrapper_Mg where MGOriginType == MGString {
     /// String length
-    var length: Int {
+    var length: MGInt {
         return origin.count
     }
     
     /// Judgment string is not empty
-    var isNotEmpty: Bool {
+    var isNotEmpty: MGBool {
         return !origin.isEmpty
     }
     
@@ -161,7 +161,7 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
     
     /// Check if string contains one or more emojis.
     /// - "Hello 😀".containEmoji -> true
-    var containEmoji: Bool {
+    var containEmoji: MGBool {
         // http://stackoverflow.com/questions/30757193/find-out-if-character-in-string-is-emoji
         for scalar in origin.unicodeScalars {
             switch scalar.value {
@@ -204,7 +204,7 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
     ///    "123abc".hasLetters -> true
     ///    "123".hasLetters -> false
     ///
-    var hasLetters: Bool {
+    var hasLetters: MGBool {
         return origin.rangeOfCharacter(from: .letters, options: .numeric, range: nil) != nil
     }
     
@@ -213,7 +213,7 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
     ///    "abcd".hasNumbers -> false
     ///    "123abc".hasNumbers -> true
     ///
-    var hasNumbers: Bool {
+    var hasNumbers: MGBool {
         return origin.rangeOfCharacter(from: .decimalDigits, options: .literal, range: nil) != nil
     }
     
@@ -222,7 +222,7 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
     ///    "abc".isAlphabetic -> true
     ///    "123abc".isAlphabetic -> false
     ///
-    var isAlphabetic: Bool {
+    var isAlphabetic: MGBool {
         let hasLetters = origin.rangeOfCharacter(from: .letters, options: .numeric, range: nil) != nil
         let hasNumbers = origin.rangeOfCharacter(from: .decimalDigits, options: .literal, range: nil) != nil
         return hasLetters && !hasNumbers
@@ -235,7 +235,7 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
     ///    "abc".isAlphaNumeric -> false
     ///    "123".isAlphaNumeric -> false
     ///
-    var isAlphaNumeric: Bool {
+    var isAlphaNumeric: MGBool {
         let hasLetters = origin.rangeOfCharacter(from: .letters, options: .numeric, range: nil) != nil
         let hasNumbers = origin.rangeOfCharacter(from: .decimalDigits, options: .literal, range: nil) != nil
         let comps = origin.components(separatedBy: .alphanumerics)
@@ -246,7 +246,7 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
     ///
     ///    "john@doe.com".isEmail -> true
     ///
-    var isEmail: Bool {
+    var isEmail: MGBool {
         // http://stackoverflow.com/questions/25471114/how-to-validate-an-e-mail-address-in-swift
         return matches(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}")
     }
@@ -255,7 +255,7 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
     ///
     ///    "https://google.com".isValidUrl -> true
     ///
-    var isValidUrl: Bool {
+    var isValidUrl: MGBool {
         return URL(string: origin) != nil
     }
     
@@ -264,7 +264,7 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
     ///    "https://google.com".isValidSchemedUrl -> true
     ///    "google.com".isValidSchemedUrl -> false
     ///
-    var isValidSchemedUrl: Bool {
+    var isValidSchemedUrl: MGBool {
         guard let url = URL(string: origin) else { return false }
         return url.scheme != nil
     }
@@ -273,7 +273,7 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
     ///
     ///    "https://google.com".isValidHttpsUrl -> true
     ///
-    var isValidHttpsUrl: Bool {
+    var isValidHttpsUrl: MGBool {
         guard let url = URL(string: origin) else { return false }
         return url.scheme == "https"
     }
@@ -282,7 +282,7 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
     ///
     ///    "http://google.com".isValidHttpUrl -> true
     ///
-    var isValidHttpUrl: Bool {
+    var isValidHttpUrl: MGBool {
         guard let url = URL(string: origin) else { return false }
         return url.scheme == "http"
     }
@@ -291,7 +291,7 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
     ///
     ///    "file://Documents/file.txt".isValidFileUrl -> true
     ///
-    var isValidFileUrl: Bool {
+    var isValidFileUrl: MGBool {
         return URL(string: origin)?.isFileURL ?? false
     }
     
@@ -300,7 +300,7 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
     ///    "123".isNumeric -> true
     ///    "abc".isNumeric -> false
     ///
-    var isNumeric: Bool {
+    var isNumeric: MGBool {
         let hasLetters = origin.rangeOfCharacter(from: .letters, options: .numeric, range: nil) != nil
         let hasNumbers = origin.rangeOfCharacter(from: .decimalDigits, options: .literal, range: nil) != nil
         return !hasLetters && hasNumbers
@@ -312,22 +312,6 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
     ///
     var latinized: MGString {
         return origin.folding(options: .diacriticInsensitive, locale: Locale.current)
-    }
-    
-    /// Bool value from string (if applicable).
-    ///
-    ///    "1".bool -> true
-    ///    "False".bool -> false
-    ///    "Hello".bool = nil
-    ///
-    var bool: MGBool? {
-        let selfLowercased = trim.lowercased()
-        if selfLowercased == "true" || selfLowercased == "1" {
-            return true
-        } else if selfLowercased == "false" || selfLowercased == "0" {
-            return false
-        }
-        return nil
     }
     
     /// Date object from "yyyy-MM-dd" formatted string.
@@ -354,12 +338,47 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
         return formatter.date(from: selfLowercased)
     }
     
+    /// Bool value from string (if applicable).
+    ///
+    ///    "1".bool -> true
+    ///    "False".bool -> false
+    ///    "Hello".bool = nil
+    ///
+    var bool: MGBool? {
+        let selfLowercased = trim.lowercased()
+        if selfLowercased == "true" || selfLowercased == "1" {
+            return true
+        } else if selfLowercased == "false" || selfLowercased == "0" {
+            return false
+        }
+        return nil
+    }
+    
     /// Integer value from string (if applicable).
     ///
-    ///    "101".int -> 101
+    ///    "88".int -> 88
+    ///    "Hello".int = nil
     ///
     var int: MGInt? {
-        return Int(origin)
+        return MGInt(origin)
+    }
+    
+    /// Float value from string (if applicable).
+    ///
+    ///    "88.88".Float -> 88.88
+    ///    "Hello".Float = nil
+    ///
+    var float: MGFloat? {
+        return MGFloat(origin)
+    }
+    
+    /// Double value from string (if applicable).
+    ///
+    ///    "88.88".Double -> 88.88
+    ///    "Hello".Double = nil
+    ///
+    var double: MGDouble? {
+        return MGDouble(origin)
     }
     
     /// URL from string (if applicable).
@@ -395,7 +414,7 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
     /// Count the number of lowercase characters.
     ///
     /// - Returns: Number of lowercase characters.
-    var countLowercasedCharacters: Int {
+    var countLowercasedCharacters: MGInt {
         var countChar = 0
         for i in 0 ..< self.length {
             guard let character = UnicodeScalar((NSString(string: origin)).character(at: i)) else {
@@ -413,7 +432,7 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
     /// Count the number of uppercase characters.
     ///
     /// - Returns: Number of uppercase characters.
-    var countUppercasedCharacters: Int {
+    var countUppercasedCharacters: MGInt {
         var countChar = 0
         for i in 0 ..< self.length {
             guard let character = UnicodeScalar((NSString(string: origin)).character(at: i)) else {
@@ -431,7 +450,7 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
     /// Count the number of numbers.
     ///
     /// - Returns: Number of numbers.
-    var countNumbers: Int {
+    var countNumbers: MGInt {
         var countNumber = 0
         for i in 0 ..< self.length {
             guard let character = UnicodeScalar((NSString(string: origin)).character(at: i)) else {
@@ -449,7 +468,7 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
     /// Count the number of symbols.
     ///
     /// - Returns: Number of symbols.
-    var countSymbols: Int {
+    var countSymbols: MGInt {
         var countSymbol = 0
         for i in 0 ..< self.length {
             guard let character = UnicodeScalar((NSString(string: origin)).character(at: i)) else {
@@ -489,7 +508,7 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
     ///
     /// - Parameters:
     ///   - from: The index of the starting position of the string(containing the characters at this position)
-    func substring(from index: Int) -> MGString {
+    func substring(from index: MGInt) -> MGString {
         if index <= 0 { return "" }
         if index >= origin.count { return "" }
         return (origin as NSString).substring(from: index)
@@ -499,7 +518,7 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
     ///
     /// - Parameters:
     ///   - to: The index of the end position of the string(does not contain the characters at this position)
-    func substring(to index: Int) -> MGString {
+    func substring(to index: MGInt) -> MGString {
         if index <= 0 { return "" }
         if index >= origin.count { return origin }
         return (origin as NSString).substring(to: index)
@@ -546,7 +565,7 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
     /// - Returns: true if string matches the pattern.
     func matches(pattern: MGString) -> MGBool {
         return origin.range(of: pattern,
-                            options: String.CompareOptions.regularExpression,
+                            options: MGString.CompareOptions.regularExpression,
                             range: nil, locale: nil) != nil
     }
     
@@ -558,7 +577,7 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
     /// - Parameter length: The target length to pad.
     /// - Parameter string: Pad string. Default is " ".
     /// - Returns: The string with the padding on the start.
-    func paddingStart(_ length: Int, with string: MGString = " ") -> MGString {
+    func paddingStart(_ length: MGInt, with string: MGString = " ") -> MGString {
         let count = self.length
         guard count < length else { return origin }
         
@@ -582,7 +601,7 @@ public extension MGWrapper_Mg where MGOriginType == MGString {
     /// - Parameter length: The target length to pad.
     /// - Parameter string: Pad string. Default is " ".
     /// - Returns: The string with the padding on the end.
-    func paddingEnd(_ length: Int, with string: MGString = " ") -> MGString {
+    func paddingEnd(_ length: MGInt, with string: MGString = " ") -> MGString {
         let count = self.length
         guard count < length else { return origin }
         
