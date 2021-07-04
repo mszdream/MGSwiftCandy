@@ -6,6 +6,8 @@
 //  Copyright © 2021 CocoaPods. All rights reserved.
 //
 
+#if MGSwiftCandy_Tools_UserDefaults
+
 import UIKit
 import MGSwiftCandy
 
@@ -76,3 +78,5 @@ extension MGTestUserDefaultsViewController {
     }
     
 }
+
+#endif

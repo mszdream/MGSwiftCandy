@@ -6,6 +6,8 @@
 //  Copyright © 2021 mszdream. All rights reserved.
 //
 
+#if MGSwiftCandy_Extension_Swift
+
 import UIKit
 
 class MGTestStringViewController: MGBaseViewController {
@@ -120,3 +122,5 @@ extension MGTestStringViewController {
         super.addDataModel(model: model)
     }
 }
+
+#endif

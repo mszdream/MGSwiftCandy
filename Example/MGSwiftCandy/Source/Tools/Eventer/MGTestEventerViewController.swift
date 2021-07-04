@@ -6,6 +6,8 @@
 //  Copyright © 2021 mszdream. All rights reserved.
 //
 
+#if MGSwiftCandy_Tools_Eventer
+
 import UIKit
 import SnapKit
 import MGSwiftCandy
@@ -27,8 +29,8 @@ class MGTestEventerViewController: UIViewController {
         textLabel.textColor = .red
         textLabel.textAlignment = .center
         
-        button.mg.titleForNormal = "获取当前时间"
-        button.mg.titleColorForNormal = .black
+        button.setTitle("获取当前时间", for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(buttonClicked(sender:)), for: .touchUpInside)
         
         MGEventer.mg.subscribe(self, name: kCurrentTime) { notice in
@@ -60,3 +62,5 @@ class MGTestEventerViewController: UIViewController {
     }
     
 }
+
+#endif

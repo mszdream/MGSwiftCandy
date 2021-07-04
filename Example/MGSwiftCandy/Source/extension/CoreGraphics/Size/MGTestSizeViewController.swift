@@ -6,6 +6,8 @@
 //  Copyright (c) 2021 mszdream. All rights reserved.
 //
 
+#if MGSwiftCandy_Extension_CoreGraphics
+
 import UIKit
 
 class MGTestSizeViewController: MGBaseViewController {
@@ -74,3 +76,5 @@ extension MGTestSizeViewController {
     }
     
 }
+
+#endif

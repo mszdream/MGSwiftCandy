@@ -3,9 +3,25 @@ use_frameworks!
 platform :ios, '9.0'
 
 target 'MGSwiftCandy_Example' do
-  pod 'MGSwiftCandy/Tools', :path => '../'
-  pod 'SnapKit'
+  pod 'MGSwiftCandy', :path => '../'
+  
+#  pod 'MGSwiftCandy/Core', :path => '../'
+#  pod 'MGSwiftCandy/Extension', :path => '../'
+#  pod 'MGSwiftCandy/Tools', :path => '../'
 
+#  pod 'MGSwiftCandy/Extension/CoreGraphics', :path => '../'
+#  pod 'MGSwiftCandy/Extension/Foundation', :path => '../'
+#  pod 'MGSwiftCandy/Extension/Swift', :path => '../'
+#  pod 'MGSwiftCandy/Extension/UIKit', :path => '../'
+  
+#  pod 'MGSwiftCandy/Tools/Eventer', :path => '../'
+#  pod 'MGSwiftCandy/Tools/keychain', :path => '../'
+#  pod 'MGSwiftCandy/Tools/Printer', :path => '../'
+#  pod 'MGSwiftCandy/Tools/Tools', :path => '../'
+#  pod 'MGSwiftCandy/Tools/UserDefaults', :path => '../'
+  
+  pod 'SnapKit'
+  
   target 'MGSwiftCandy_Tests' do
     inherit! :search_paths
     

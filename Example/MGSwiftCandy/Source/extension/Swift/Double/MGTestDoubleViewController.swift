@@ -6,6 +6,8 @@
 //  Copyright © 2021 CocoaPods. All rights reserved.
 //
 
+#if MGSwiftCandy_Extension_Swift
+
 import UIKit
 
 class MGTestDoubleViewController: MGBaseViewController {
@@ -66,3 +68,5 @@ extension MGTestDoubleViewController {
         super.addDataModel(model: model)
     }
 }
+
+#endif

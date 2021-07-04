@@ -6,6 +6,8 @@
 //  Copyright © 2021 CocoaPods. All rights reserved.
 //
 
+#if MGSwiftCandy_Extension_Swift
+
 import UIKit
 
 class MGTestBoolViewController: MGBaseViewController {
@@ -63,3 +65,5 @@ extension MGTestBoolViewController {
         super.addDataModel(model: model)
     }
 }
+
+#endif

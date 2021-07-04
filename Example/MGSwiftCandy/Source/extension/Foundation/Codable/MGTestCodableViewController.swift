@@ -6,6 +6,8 @@
 //  Copyright © 2021 mszdream. All rights reserved.
 //
 
+#if MGSwiftCandy_Extension_Foundation
+
 import UIKit
 
 class MGTestCodableViewController: MGBaseViewController {
@@ -50,3 +52,5 @@ extension MGTestCodableViewController {
         var name: String?
     }
 }
+
+#endif

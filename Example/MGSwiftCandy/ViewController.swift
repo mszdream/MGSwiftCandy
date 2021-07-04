@@ -10,37 +10,68 @@ import UIKit
 import MGSwiftCandy
 
 class ViewController: MGBaseViewController {
+    var index = 0
+    var titles: [String] = []
+    
     override func generatingData() {
         // MARK: - Extension
         do {
             /// CoreGraphics
-            addItem(title: "Size", className: "MGTestSizeViewController", section: 0)
+            #if MGSwiftCandy_Extension_CoreGraphics
+            addItem(title: "Size", className: "MGTestSizeViewController", section: index)
+            index += 1
+            titles.append("CoreGraphics")
+            #endif
             
             // MARK: - Foundation
-            addItem(title: "Codable", className: "MGTestCodableViewController", section: 1)
-            addItem(title: "Array", className: "MGTestArrayViewController", section: 1)
+            #if MGSwiftCandy_Extension_Foundation
+            addItem(title: "Codable", className: "MGTestCodableViewController", section: index)
+            addItem(title: "Array", className: "MGTestArrayViewController", section: index)
+            index += 1
+            titles.append("Foundation")
+            #endif
             
             // MARK: - Swift
-            addItem(title: "Bool", className: "MGTestBoolViewController", section: 2)
-            addItem(title: "Double", className: "MGTestDoubleViewController", section: 2)
-            addItem(title: "Float", className: "MGTestFloatViewController", section: 2)
-            addItem(title: "Int", className: "MGTestIntViewController", section: 2)
-            addItem(title: "String", className: "MGTestStringViewController", section: 2)
+            #if MGSwiftCandy_Extension_Swift
+            addItem(title: "Bool", className: "MGTestBoolViewController", section: index)
+            addItem(title: "Double", className: "MGTestDoubleViewController", section: index)
+            addItem(title: "Float", className: "MGTestFloatViewController", section: index)
+            addItem(title: "Int", className: "MGTestIntViewController", section: index)
+            addItem(title: "String", className: "MGTestStringViewController", section: index)
+            index += 1
+            titles.append("Swift")
+            #endif
             
             // MARK: - UIKit
-            addItem(title: "Color", className: "MGTestColorViewController", section: 3)
-            addItem(title: "Image", className: "MGTestImageViewController", section: 3)
-            addItem(title: "View", className: "MGTestViewViewController", section: 3)
-            addItem(title: "Screen", className: "MGTestScreenViewController", section: 3)
-            addItem(title: "Button", className: "MGTestButtonViewController", section: 3)
+            #if MGSwiftCandy_Extension_UIKit
+            addItem(title: "Color", className: "MGTestColorViewController", section: index)
+            addItem(title: "Image", className: "MGTestImageViewController", section: index)
+            addItem(title: "View", className: "MGTestViewViewController", section: index)
+            addItem(title: "Screen", className: "MGTestScreenViewController", section: index)
+            addItem(title: "Button", className: "MGTestButtonViewController", section: index)
+            index += 1
+            titles.append("UIKit")
+            #endif
         }
         
         // MARK: - Tools
         do {
-            addItem(title: "Eventer", className: "MGTestEventerViewController", section: 4)
-            addItem(title: "Printer", className: "MGTestPrinterViewController", section: 4)
-            addItem(title: "Keychain", className: "MGTestKeychainViewController", section: 4)
-            addItem(title: "UserDefaults", className: "MGTestUserDefaultsViewController", section: 4)
+            #if MGSwiftCandy_Tools
+            #if MGSwiftCandy_Tools_Eventer
+            addItem(title: "Eventer", className: "MGTestEventerViewController", section: index)
+            #endif
+            #if MGSwiftCandy_Tools_Printer
+            addItem(title: "Printer", className: "MGTestPrinterViewController", section: index)
+            #endif
+            #if MGSwiftCandy_Tools_keychain
+            addItem(title: "Keychain", className: "MGTestKeychainViewController", section: index)
+            #endif
+            #if MGSwiftCandy_Tools_UserDefaults
+            addItem(title: "UserDefaults", className: "MGTestUserDefaultsViewController", section: index)
+            #endif
+            index += 1
+            titles.append("Tools")
+            #endif
         }
     }
     
@@ -54,20 +85,7 @@ class ViewController: MGBaseViewController {
     }
 
     override func title(section: Int) -> String? {
-        switch section {
-        case 0:
-            return "CoreGraphics"
-        case 1:
-            return "Foundation"
-        case 2:
-            return "Swift"
-        case 3:
-            return "UIKit"
-        case 4:
-            return "Tools"
-        default:
-            return nil
-        }
+        return titles[section]
     }
     
     override func cellClicked(model: MGModelProtocol) {

@@ -6,6 +6,8 @@
 //  Copyright © 2021 mszdream. All rights reserved.
 //
 
+#if MGSwiftCandy_Extension_UIKit
+
 import UIKit
 
 class MGTestScreenViewController: MGBaseViewController {
@@ -58,3 +60,5 @@ extension MGTestScreenViewController {
         super.addDataModel(model: model)
     }
 }
+
+#endif

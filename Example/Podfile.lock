@@ -1,13 +1,42 @@
 PODS:
+  - MGSwiftCandy (1.1.0):
+    - MGSwiftCandy/Core (= 1.1.0)
+    - MGSwiftCandy/Extension (= 1.1.0)
+    - MGSwiftCandy/Tools (= 1.1.0)
   - MGSwiftCandy/Core (1.1.0)
   - MGSwiftCandy/Extension (1.1.0):
+    - MGSwiftCandy/Extension/CoreGraphics (= 1.1.0)
+    - MGSwiftCandy/Extension/Foundation (= 1.1.0)
+    - MGSwiftCandy/Extension/Swift (= 1.1.0)
+    - MGSwiftCandy/Extension/UIKit (= 1.1.0)
+  - MGSwiftCandy/Extension/CoreGraphics (1.1.0):
     - MGSwiftCandy/Core
+  - MGSwiftCandy/Extension/Foundation (1.1.0):
+    - MGSwiftCandy/Core
+  - MGSwiftCandy/Extension/Swift (1.1.0):
+    - MGSwiftCandy/Core
+  - MGSwiftCandy/Extension/UIKit (1.1.0):
+    - MGSwiftCandy/Extension/Swift
   - MGSwiftCandy/Tools (1.1.0):
-    - MGSwiftCandy/Extension
+    - MGSwiftCandy/Tools/Eventer (= 1.1.0)
+    - MGSwiftCandy/Tools/keychain (= 1.1.0)
+    - MGSwiftCandy/Tools/Printer (= 1.1.0)
+    - MGSwiftCandy/Tools/Tools (= 1.1.0)
+    - MGSwiftCandy/Tools/UserDefaults (= 1.1.0)
+  - MGSwiftCandy/Tools/Eventer (1.1.0):
+    - MGSwiftCandy/Core
+  - MGSwiftCandy/Tools/keychain (1.1.0):
+    - MGSwiftCandy/Core
+  - MGSwiftCandy/Tools/Printer (1.1.0):
+    - MGSwiftCandy/Tools/Tools
+  - MGSwiftCandy/Tools/Tools (1.1.0):
+    - MGSwiftCandy/Core
+  - MGSwiftCandy/Tools/UserDefaults (1.1.0):
+    - MGSwiftCandy/Core
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
-  - MGSwiftCandy/Tools (from `../`)
+  - MGSwiftCandy (from `../`)
   - SnapKit
 
 SPEC REPOS:
@@ -19,9 +48,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MGSwiftCandy: 97c611ec649e0f8b76ea38ea6550d28f51d0fcb7
+  MGSwiftCandy: c7c0e7cf397ede37cdb2b79616845887cc20ff6e
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: b3fd4e187814cf3102283d64f3894348771f6cc2
+PODFILE CHECKSUM: a97e356f9f7006e2a7f7462e92ec682864aa64c1
 
 COCOAPODS: 1.10.1

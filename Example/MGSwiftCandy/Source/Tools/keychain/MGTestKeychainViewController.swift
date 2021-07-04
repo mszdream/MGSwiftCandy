@@ -6,6 +6,8 @@
 //  Copyright © 2021 CocoaPods. All rights reserved.
 //
 
+#if MGSwiftCandy_Tools_keychain
+
 import UIKit
 import MGSwiftCandy
 
@@ -127,3 +129,5 @@ extension MGTestKeychainViewController {
         }
     }
 }
+
+#endif

@@ -33,16 +33,85 @@ Pod::Spec.new do |s|
   
   s.subspec 'Core' do |ss|
     ss.source_files = 'MGSwiftCandy/Classes/Core/**/*'
+    ss.xcconfig = {
+        "OTHER_SWIFT_FLAGS" => "-D #{ss.name.tr!("//", "_")}"
+    }
   end
   
   s.subspec 'Extension' do |ss|
-    ss.source_files = 'MGSwiftCandy/Classes/Extension/**/*'
-    ss.dependency 'MGSwiftCandy/Core'
+    ss.xcconfig = {
+      "OTHER_SWIFT_FLAGS" => "-D #{ss.name.tr!("//", "_")}"
+    }
+    ss.subspec "CoreGraphics" do |sss|
+        sss.source_files = 'MGSwiftCandy/Classes/Extension/CoreGraphics/**/*'
+        sss.dependency 'MGSwiftCandy/Core'
+        sss.xcconfig = {
+            "OTHER_SWIFT_FLAGS" => "-D #{sss.name.tr!("//", "_")}"
+        }
+    end
+    ss.subspec "Foundation" do |sss|
+        sss.source_files = 'MGSwiftCandy/Classes/Extension/Foundation/**/*'
+        sss.dependency 'MGSwiftCandy/Core'
+        sss.xcconfig = {
+            "OTHER_SWIFT_FLAGS" => "-D #{sss.name.tr!("//", "_")}"
+        }
+    end
+    ss.subspec "Swift" do |sss|
+        sss.source_files = 'MGSwiftCandy/Classes/Extension/Swift/**/*'
+        sss.dependency 'MGSwiftCandy/Core'
+        sss.xcconfig = {
+            "OTHER_SWIFT_FLAGS" => "-D #{sss.name.tr!("//", "_")}"
+        }
+    end
+    ss.subspec "UIKit" do |sss|
+        sss.source_files = 'MGSwiftCandy/Classes/Extension/UIKit/**/*'
+        sss.dependency 'MGSwiftCandy/Extension/Swift'
+        sss.xcconfig = {
+            "OTHER_SWIFT_FLAGS" => "-D #{sss.name.tr!("//", "_")}"
+        }
+    end
   end
   
+#  puts isTools
   s.subspec 'Tools' do |ss|
-    ss.source_files = 'MGSwiftCandy/Classes/Tools/**/*'
-    ss.dependency 'MGSwiftCandy/Extension'
+    ss.xcconfig = {
+      "OTHER_SWIFT_FLAGS" => "-D #{ss.name.tr!("//", "_")}"
+    }
+    ss.subspec "Eventer" do |sss|
+        sss.source_files = 'MGSwiftCandy/Classes/Tools/Eventer/**/*'
+        sss.dependency 'MGSwiftCandy/Core'
+        sss.xcconfig = {
+            "OTHER_SWIFT_FLAGS" => "-D #{sss.name.tr!("//", "_")}"
+        }
+    end
+    ss.subspec "keychain" do |sss|
+        sss.source_files = 'MGSwiftCandy/Classes/Tools/keychain/**/*'
+        sss.dependency 'MGSwiftCandy/Core'
+        sss.xcconfig = {
+            "OTHER_SWIFT_FLAGS" => "-D #{sss.name.tr!("//", "_")}"
+        }
+    end
+    ss.subspec "Printer" do |sss|
+        sss.source_files = 'MGSwiftCandy/Classes/Tools/Printer/**/*'
+        sss.dependency 'MGSwiftCandy/Tools/Tools'
+        sss.xcconfig = {
+            "OTHER_SWIFT_FLAGS" => "-D #{sss.name.tr!("//", "_")}"
+        }
+    end
+    ss.subspec "Tools" do |sss|
+        sss.source_files = 'MGSwiftCandy/Classes/Tools/Tools/**/*'
+        sss.dependency 'MGSwiftCandy/Core'
+        sss.xcconfig = {
+            "OTHER_SWIFT_FLAGS" => "-D #{sss.name.tr!("//", "_")}"
+        }
+    end
+    ss.subspec "UserDefaults" do |sss|
+        sss.source_files = 'MGSwiftCandy/Classes/Tools/UserDefaults/**/*'
+        sss.dependency 'MGSwiftCandy/Core'
+        sss.xcconfig = {
+            "OTHER_SWIFT_FLAGS" => "-D #{sss.name.tr!("//", "_")}"
+        }
+    end
   end
   
   # s.source_files = 'MGSwiftCandy/Classes/**/*'

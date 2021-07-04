@@ -6,6 +6,8 @@
 //  Copyright © 2021 mszdream. All rights reserved.
 //
 
+#if MGSwiftCandy_Extension_Foundation
+
 import UIKit
 
 class MGTestArrayViewController: MGBaseViewController {
@@ -98,3 +100,4 @@ extension MGTestArrayViewController {
     
 }
 
+#endif

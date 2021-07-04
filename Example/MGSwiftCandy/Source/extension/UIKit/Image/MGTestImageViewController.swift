@@ -6,6 +6,8 @@
 //  Copyright © 2021 mszdream. All rights reserved.
 //
 
+#if MGSwiftCandy_Extension_UIKit
+
 import UIKit
 import SnapKit
 
@@ -116,3 +118,5 @@ extension MGTestImageViewController {
     }
     
 }
+
+#endif

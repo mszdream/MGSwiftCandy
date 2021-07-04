@@ -6,6 +6,8 @@
 //  Copyright © 2021 mszdream. All rights reserved.
 //
 
+#if MGSwiftCandy_Tools_Printer
+
 import UIKit
 import MGSwiftCandy
 
@@ -62,3 +64,4 @@ extension MGTestPrinterViewController {
     
 }
 
+#endif

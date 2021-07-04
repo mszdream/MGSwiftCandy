@@ -6,6 +6,8 @@
 //  Copyright © 2021 mszdream. All rights reserved.
 //
 
+#if MGSwiftCandy_Extension_UIKit
+
 import UIKit
 
 class MGTestButtonViewController: MGBaseViewController {
@@ -163,5 +165,6 @@ extension MGTestButtonViewController {
         super.addDataModel(model: model, section: section)
     }
     
-    
 }
+
+#endif
