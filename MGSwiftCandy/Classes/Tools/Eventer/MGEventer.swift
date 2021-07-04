@@ -10,7 +10,7 @@ import Foundation
 
 public class  MGEventer: MGWrapperEnable {
     /// The cache for storing notification related informationThe cache for storing notification related information
-    fileprivate var cache: [UInt: [String: NSObjectProtocol]] = [:]
+    fileprivate var cache: [MGUInt: [MGString: NSObjectProtocol]] = [:]
     
     /// Event Handler
     fileprivate struct MGEventerHander {
@@ -33,7 +33,7 @@ public extension MGWrapper_Mg where MGOriginType: MGEventer {
     ///   - handler: Event handling
     @discardableResult
     static func subscribe(_ target: AnyObject,
-                          name: String,
+                          name: MGString,
                           object: Any? = nil,
                           queue: OperationQueue? = .main,
                           handler: @escaping ((Notification) -> Void)) -> NSObjectProtocol {
@@ -64,7 +64,7 @@ public extension MGWrapper_Mg where MGOriginType: MGEventer {
     ///   - on queue: The queue for sending notifications
     ///   - object: The object to send notifications
     ///   - userInfo: The information carried in notification sending
-    static func post(_ name: String,
+    static func post(_ name: MGString,
                      on queue: DispatchQueue? = nil,
                      object: Any? = nil,
                      userInfo: [AnyHashable: Any]? = nil) {
@@ -94,7 +94,7 @@ private extension MGWrapper_Mg where MGOriginType: MGEventer {
     ///   - handler: Event handling
     @discardableResult
     private static func on(_ target: AnyObject,
-                           name: String,
+                           name: MGString,
                            object: Any? = nil,
                            queue: OperationQueue? = nil,
                            handler: @escaping ((Notification) -> Void)) -> NSObjectProtocol {
@@ -126,7 +126,7 @@ private extension MGWrapper_Mg where MGOriginType: MGEventer {
     /// - Parameters
     ///   - target: An instance of a class,
     private static func unregister(_ target: AnyObject) {
-        let id = UInt(bitPattern: ObjectIdentifier(target))
+        let id = MGUInt(bitPattern: ObjectIdentifier(target))
         let center = NotificationCenter.default
 
         MGEventer.MGEventerHander.queue.sync {
@@ -145,8 +145,8 @@ private extension MGWrapper_Mg where MGOriginType: MGEventer {
     /// - Parameters
     ///   - target: An instance of a class,
     ///   - name: The name of the notification
-    private static func unregister(_ target: AnyObject, name: String) {
-        let id = UInt(bitPattern: ObjectIdentifier(target))
+    private static func unregister(_ target: AnyObject, name: MGString) {
+        let id = MGUInt(bitPattern: ObjectIdentifier(target))
         let center = NotificationCenter.default
 
         MGEventer.MGEventerHander.queue.sync {

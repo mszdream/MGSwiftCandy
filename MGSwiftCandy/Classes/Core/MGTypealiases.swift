@@ -14,15 +14,23 @@ public typealias MGBool = Bool
 
 // MARK: - Swift Math
 public typealias MGInt = Int
+public typealias MGUInt = UInt
+public typealias MGUInt32 = UInt32
+public typealias MGFloat = Float
+public typealias MGDouble = Double
 
 // MARK: - CoreGraphics
-public typealias MGSize = CGSize
+public typealias MGCGRect = CGRect
+public typealias MGCGSize = CGSize
+public typealias MGCGFloat = CGFloat
+public typealias MGCGPoint = CGPoint
 
 // MARK: - Foundation
 public typealias MGDecodable = Decodable
 public typealias MGEncodable = Encodable
 public typealias MGArray = Array
 public typealias MGDate = Date
+public typealias MGData = Data
 public typealias MGURL = URL
 
 // MARK: - UIKit

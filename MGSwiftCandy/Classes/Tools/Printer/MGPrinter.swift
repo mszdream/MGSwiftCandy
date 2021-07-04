@@ -23,12 +23,12 @@ public extension MGWrapper_Mg where MGOriginType: MGPrinter {
     ///   - line: Line that trigger logs
     static func printer(_ items: Any?...,
                         type: MGPrinterType = .debug,
-                        tag: String? = nil,
-                        separator: String = " ",
-                        terminator: String = "",
-                        function: String = #function,
-                        line: Int = #line,
-                        file: String = #file) {
+                        tag: MGString? = nil,
+                        separator: MGString = " ",
+                        terminator: MGString = "",
+                        function: MGString = #function,
+                        line: MGInt = #line,
+                        file: MGString = #file) {
         CustomPrint(items,
                     type: type,
                     tag: tag,
@@ -52,13 +52,13 @@ public extension MGWrapper_Mg where MGOriginType: MGPrinter {
     ///   - line: Line that trigger logs
     static func printer(_ items: Any?...,
                         type: MGPrinterType = .debug,
-                        tag: String? = nil,
-                        separator: String = " ",
-                        terminator: String = "",
-                        function: String = #function,
-                        line: Int = #line,
-                        file: String = #file,
-                        target: inout String) {
+                        tag: MGString? = nil,
+                        separator: MGString = " ",
+                        terminator: MGString = "",
+                        function: MGString = #function,
+                        line: MGInt = #line,
+                        file: MGString = #file,
+                        target: inout MGString) {
         let retString = MGOutStream()
         CustomPrint(items,
                     type: type,
@@ -75,27 +75,27 @@ public extension MGWrapper_Mg where MGOriginType: MGPrinter {
 
     private static func CustomPrint(_ items: [Any?],
                                     type: MGPrinterType,
-                                    tag: String?,
-                                    separator: String,
-                                    terminator: String,
-                                    function: String,
-                                    line: Int,
-                                    file: String,
+                                    tag: MGString?,
+                                    separator: MGString,
+                                    terminator: MGString,
+                                    function: MGString,
+                                    line: MGInt,
+                                    file: MGString,
                                     target: MGOutStream?) {
         #if DEBUG
-        let msgs = items.map({ (i) -> String in
-            if let s = i as? String { return s }
+        let msgs = items.map({ (i) -> MGString in
+            if let s = i as? MGString { return s }
             if let i = i { return MGTools.mg.dumper(i) }
             return "nil"
         })
         
         let sep = "----------------------- \(tag ?? "")"
-        let results: [String] = [
+        let results: [MGString] = [
             sep,
             "▷ [\(type.symbol)] \(tag ?? type.tag)",
-            "▷ [📃] \(String(describing: URL(fileURLWithPath: file).lastPathComponent)) [\(line)]",
+            "▷ [📃] \(MGString(describing: MGURL(fileURLWithPath: file).lastPathComponent)) [\(line)]",
             "▷ [✂️] \(function)",
-            "▷ [⏰] " + dateFormat(date: Date()),
+            "▷ [⏰] " + dateFormat(date: MGDate()),
             "\(msgs.joined(separator: separator))",
             sep
         ]
@@ -109,7 +109,7 @@ public extension MGWrapper_Mg where MGOriginType: MGPrinter {
     }
 
     
-    private static func dateFormat(date: Date) -> String {
+    private static func dateFormat(date: MGDate) -> MGString {
         let dateFormatter = DateFormatter.init()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
         let dateString = dateFormatter.string(from: date)
@@ -120,8 +120,8 @@ public extension MGWrapper_Mg where MGOriginType: MGPrinter {
 
 public extension MGWrapper_Mg where MGOriginType: MGPrinter {
     class MGOutStream: TextOutputStream {
-        public var string: String = ""
-        public func write(_ string: String) {
+        public var string: MGString = ""
+        public func write(_ string: MGString) {
             self.string = "\(self.string)\(string)"
         }
     }
@@ -132,9 +132,9 @@ public extension MGWrapper_Mg where MGOriginType: MGPrinter {
         case info
         case warning
         case dumping
-        case custom(String)
+        case custom(MGString)
         
-        fileprivate var symbol: String {
+        fileprivate var symbol: MGString {
             switch self {
             case .debug:   return "💬"
             case .error:   return "❌"
@@ -146,7 +146,7 @@ public extension MGWrapper_Mg where MGOriginType: MGPrinter {
             }
         }
         
-        fileprivate var tag: String {
+        fileprivate var tag: MGString {
             switch self {
             case .debug:
                 return "DEBUG"
@@ -163,7 +163,7 @@ public extension MGWrapper_Mg where MGOriginType: MGPrinter {
             }
         }
         
-        public static func ==(lhs: MGPrinterType, rhs: MGPrinterType) -> Bool {
+        public static func ==(lhs: MGPrinterType, rhs: MGPrinterType) -> MGBool {
             switch (lhs, rhs) {
             case (.debug, .debug),
                  (.error, .error),

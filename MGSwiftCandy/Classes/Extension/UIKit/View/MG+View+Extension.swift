@@ -12,42 +12,42 @@ extension MGView: MGWrapperEnable {}
 
 // MARK: - property
 public extension MGWrapper_Mg where MGOriginType: MGView {
-    var x: CGFloat {
+    var x: MGCGFloat {
         get { return origin.frame.origin.x }
         set { origin.frame.origin.x = newValue }
     }
     
-    var y: CGFloat {
+    var y: MGCGFloat {
         get { return origin.frame.origin.y }
         set { origin.frame.origin.y = newValue }
     }
     
-    var width: CGFloat {
+    var width: MGCGFloat {
         get { return origin.frame.size.width }
         set { origin.frame.size.width = newValue }
     }
     
-    var height: CGFloat {
+    var height: MGCGFloat {
         get { return origin.frame.size.height }
         set { origin.frame.size.height = newValue }
     }
     
-    var centerX: CGFloat {
+    var centerX: MGCGFloat {
         get { return origin.center.x }
         set { origin.center.x = newValue }
     }
     
-    var centerY: CGFloat {
+    var centerY: MGCGFloat {
         get { return origin.center.y }
         set { origin.center.y = newValue }
     }
     
-    var origin: CGPoint {
+    var origin: MGCGPoint {
         get { return origin.frame.origin }
         set { origin.frame.origin = newValue }
     }
     
-    var size: CGSize {
+    var size: MGCGSize {
         get { return origin.frame.size }
         set { origin.frame.size = newValue }
     }

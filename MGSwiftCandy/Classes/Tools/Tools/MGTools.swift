@@ -12,8 +12,8 @@ public class MGTools: MGWrapperEnable {}
 
 public extension MGWrapper_Mg where MGOriginType: MGTools {
     /// Get the name of the namespace dynamically
-    static func getNameSpaceName() -> String? {
-        guard let spaceName = Bundle.main.infoDictionary!["CFBundleExecutable"] as? String else {
+    static func getNameSpaceName() -> MGString? {
+        guard let spaceName = Bundle.main.infoDictionary!["CFBundleExecutable"] as? MGString else {
             print("get namespace failed!")
             return nil
         }
@@ -28,8 +28,8 @@ public extension MGWrapper_Mg where MGOriginType: MGTools {
     ///   - nameSpaceName: namespace name
     /// - Returns:
     ///   - Return a class type
-    static func createClass<T: MGCreate>(className: String, nameSpaceName: String? = nil) -> T.Type? {
-        var nameSpace: String?
+    static func createClass<T: MGCreate>(className: MGString, nameSpaceName: MGString? = nil) -> T.Type? {
+        var nameSpace: MGString?
         if let nameSpaceName = nameSpaceName, nameSpaceName.count > 0 {
             nameSpace = nameSpaceName
         } else {
@@ -52,7 +52,7 @@ public extension MGWrapper_Mg where MGOriginType: MGTools {
     ///   - nameSpaceName: namespace name
     /// - Returns:
     ///   - Return a instance
-    static func create<T: MGCreate>(className: String, nameSpaceName: String? = nil) -> T? {
+    static func create<T: MGCreate>(className: MGString, nameSpaceName: MGString? = nil) -> T? {
         guard let typeClass: T.Type = createClass(className: className, nameSpaceName: nameSpaceName) else {
             return nil
         }
@@ -64,7 +64,7 @@ public extension MGWrapper_Mg where MGOriginType: MGTools {
 }
 
 public extension MGWrapper_Mg where MGOriginType: MGTools {
-    static func dumper(_ item: Any?) -> String {
+    static func dumper(_ item: Any?) -> MGString {
         var output = ""
         guard let i = item else {
             return output

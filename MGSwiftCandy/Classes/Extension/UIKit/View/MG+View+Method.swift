@@ -20,11 +20,11 @@ public extension MGWrapper_Mg where MGOriginType: MGView {
     /// - Returns:
     ///   - The layer of the gradient
     @discardableResult
-    func gradient(colors: [UIColor],
-                  frame: CGRect = .zero,
-                  startPoint: CGPoint = CGPoint(x: 0, y: 0),
-                  endPoint: CGPoint = CGPoint(x: 1, y: 0),
-                  mask: Bool = false) -> CALayer? {
+    func gradient(colors: [MGColor],
+                  frame: MGCGRect = .zero,
+                  startPoint: MGCGPoint = MGCGPoint(x: 0, y: 0),
+                  endPoint: MGCGPoint = MGCGPoint(x: 1, y: 0),
+                  mask: MGBool = false) -> CALayer? {
         let currentFrame = frame == .zero ? origin.bounds : frame
         guard colors.count >= 2, currentFrame.width > 0, currentFrame.height > 0 else {
             return nil

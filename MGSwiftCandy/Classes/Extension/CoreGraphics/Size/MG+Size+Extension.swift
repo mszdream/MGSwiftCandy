@@ -8,15 +8,15 @@
 
 import Foundation
 
-extension MGSize: MGWrapperEnable {}
+extension MGCGSize: MGWrapperEnable {}
 
 // MARK: - Properties
-public extension MGWrapper_Mg where MGOriginType == MGSize {
+public extension MGWrapper_Mg where MGOriginType == MGCGSize {
     /// Calculates the aspect ratio of the size.
     ///
     /// - Returns:
     ///   - The aspect ratio of the size.
-    var aspectRatio: CGFloat {
+    var aspectRatio: MGCGFloat {
         if origin.height == 0 {
             return 1
         }
@@ -30,14 +30,14 @@ public extension MGWrapper_Mg where MGOriginType == MGSize {
     ///   - size: The contraining size.
     /// - Returns:
     ///   - A new size that fits inside the contraining size with the same aspect ratio.
-    func constrained(by size: MGSize) -> MGSize {
-        let aspectWidth = round(aspectRatio * size.height)
-        let aspectHeight = round(size.width / aspectRatio)
+    func constrained(by size: MGCGSize) -> MGCGSize {
+        let aspectWidth = Darwin.round(aspectRatio * size.height)
+        let aspectHeight = Darwin.round(size.width / aspectRatio)
         
         if aspectWidth > size.width {
-            return MGSize(width: size.width, height: aspectHeight)
+            return MGCGSize(width: size.width, height: aspectHeight)
         } else {
-            return MGSize(width: aspectWidth, height: size.height)
+            return MGCGSize(width: aspectWidth, height: size.height)
         }
     }
     
@@ -47,14 +47,14 @@ public extension MGWrapper_Mg where MGOriginType == MGSize {
     ///   - size: The contraining size.
     /// - Returns:
     ///   - A new size that fills the contraining size keeping the same aspect ratio.
-    func filling(by size: CGSize) -> CGSize {
-        let aspectWidth = round(aspectRatio * size.height)
-        let aspectHeight = round(size.width / aspectRatio)
+    func filling(by size: MGCGSize) -> MGCGSize {
+        let aspectWidth = Darwin.round(aspectRatio * size.height)
+        let aspectHeight = Darwin.round(size.width / aspectRatio)
         
         if aspectWidth > size.width {
-            return CGSize(width: aspectWidth, height: size.height)
+            return MGCGSize(width: aspectWidth, height: size.height)
         } else {
-            return CGSize(width: size.width, height: aspectHeight)
+            return MGCGSize(width: size.width, height: aspectHeight)
         }
     }
     

@@ -16,7 +16,7 @@ public extension MGWrapper_Mg where MGOriginType == MGUserDefaults {
     /// - Parameters:
     ///   - key: Key to store content
     ///   - value: The value to be stored
-    static func set<Type: Codable>(key: String, value: Type) {
+    static func set<Type: Codable>(key: MGString, value: Type) {
         let encoder = JSONEncoder()
         guard let data = try? encoder.encode(value) else {
             return
@@ -33,7 +33,7 @@ public extension MGWrapper_Mg where MGOriginType == MGUserDefaults {
     ///   - key Key used to query information
     /// - Returns
     ///   - Query result
-    static func get<Type: Codable>(key: String) -> Type? {
+    static func get<Type: Codable>(key: MGString) -> Type? {
         let userDefault = UserDefaults.standard
         guard let data = userDefault.value(forKey: key) as? Data else {
             return nil
@@ -48,7 +48,7 @@ public extension MGWrapper_Mg where MGOriginType == MGUserDefaults {
     ///
     /// - Parameters:
     ///   - key: To remove the value used this key
-    static func remove(key: String) {
+    static func remove(key: MGString) {
         let userDefault = UserDefaults.standard
         userDefault.removeObject(forKey: key)
     }

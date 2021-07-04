@@ -31,9 +31,9 @@ public extension MGWrapper_Mg where MGOriginType == MGKeychain {
     ///   - Operation status
     @discardableResult
     static func setPassword<Type: Codable>(service: String = defaultService,
-                            account: String,
+                            account: MGString,
                             password: Type,
-                            accessGroup: String = "") -> OSStatus {
+                            accessGroup: MGString = "") -> OSStatus {
         let encoder = JSONEncoder()
         guard let data = try? encoder.encode(password) else {
             return kInvalidParameters
@@ -53,9 +53,9 @@ public extension MGWrapper_Mg where MGOriginType == MGKeychain {
     /// - Returns:
     ///   - The content of the Object type(conform NSCoding protocol) searched out
     @discardableResult
-    static func getPassword<Type: Codable>(service: String = defaultService,
-                            account: String,
-                            accessGroup: String = "") -> Type? {
+    static func getPassword<Type: Codable>(service: MGString = defaultService,
+                            account: MGString,
+                            accessGroup: MGString = "") -> Type? {
         let query = self.query(service: service, account: account, accessGroup: accessGroup)
         var data = Data()
         self.fetch(query: query, password: &data)
@@ -73,9 +73,9 @@ public extension MGWrapper_Mg where MGOriginType == MGKeychain {
     /// - Returns:
     ///   - Operations status
     @discardableResult
-    static func remove(service: String = defaultService,
-                       account: String,
-                       accessGroup: String = "") -> OSStatus {
+    static func remove(service: MGString = defaultService,
+                       account: MGString,
+                       accessGroup: MGString = "") -> OSStatus {
         let query = self.query(service: service, account: account, accessGroup: accessGroup)
         let status = self.delete(query: query)
         return status
@@ -89,7 +89,7 @@ public extension MGWrapper_Mg where MGOriginType == MGKeychain {
     /// - Returns:
     ///   - The contents of the Object type(conform NSCoding protocol) searched out
     @discardableResult
-    static func allPasswords<Type: Codable>(service: String? = nil, accessGroup: String? = nil) -> [Type] {
+    static func allPasswords<Type: Codable>(service: MGString? = nil, accessGroup: MGString? = nil) -> [Type] {
         let query = self.query(service: service ?? "", account: "", accessGroup: "")
         var datas: [Data] = []
         fetchAll(query: query, password: &datas)
@@ -116,7 +116,7 @@ public extension MGWrapper_Mg where MGOriginType == MGKeychain {
     /// - Returns:
     ///   - Operation status
     @discardableResult
-    private static func save(query: MGQueryType, password: Data) -> OSStatus {
+    private static func save(query: MGQueryType, password: MGData) -> OSStatus {
         var status = SecItemCopyMatching(query as CFDictionary, nil)
         var attributes = MGQueryType()
 
@@ -143,7 +143,7 @@ public extension MGWrapper_Mg where MGOriginType == MGKeychain {
     /// - Returns:
     ///   - Operation status
     @discardableResult
-    private static func fetch(query: MGQueryType, password: inout Data) -> OSStatus {
+    private static func fetch(query: MGQueryType, password: inout MGData) -> OSStatus {
         var query = query
         query[kSecReturnData as String] = true
         query[kSecMatchLimit as String] = kSecMatchLimitOne
@@ -165,7 +165,7 @@ public extension MGWrapper_Mg where MGOriginType == MGKeychain {
     /// - Returns:
     ///   - Operation status
     @discardableResult
-    private static func fetchAll(query: MGQueryType, password: inout [Data]) -> OSStatus {
+    private static func fetchAll(query: MGQueryType, password: inout [MGData]) -> OSStatus {
         var query = query
         query[kSecReturnData as String] = true
         query[kSecMatchLimit as String] = kSecMatchLimitAll
@@ -200,10 +200,10 @@ public extension MGWrapper_Mg where MGOriginType == MGKeychain {
     /// - Returns:
     ///   - A instance of type MGQueryType
     @discardableResult
-    private static func query(service: String = defaultService,
-                              account: String,
-                              accessGroup: String = "") -> MGQueryType {
-        var query: MGQueryType = [kSecClass as String: kSecClassGenericPassword]
+    private static func query(service: MGString = defaultService,
+                              account: MGString,
+                              accessGroup: MGString = "") -> MGQueryType {
+        var query: MGQueryType = [kSecClass as MGString: kSecClassGenericPassword]
         query[kSecAttrAccessible as String] = kSecAttrAccessibleAlways
         if !service.isEmpty {
             query[kSecAttrService as String] = service
@@ -222,7 +222,7 @@ public extension MGWrapper_Mg where MGOriginType == MGKeychain {
         // simulator will return -25243 (errSecNoAccessForItem).
         #else
         if !accessGroup.isEmpty {
-            query[kSecAttrAccessGroup as String] = accessGroup
+            query[kSecAttrAccessGroup as MGString] = accessGroup
         }
         #endif
         
