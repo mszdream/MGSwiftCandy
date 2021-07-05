@@ -2,7 +2,8 @@
 //  MG+Bool+Extension.swift
 //  MGSwiftCandy
 //
-//  Created by msz on 2021/7/4.
+//  Created by mszdream on 2021/7/4.
+//  Copyright (c) 2021 mszdream. All rights reserved.
 //
 
 extension MGBool: MGWrapperEnable {}

@@ -2,7 +2,8 @@
 //  MGKeychain.swift
 //  MGSwiftCandy
 //
-//  Created by msz on 2021/6/27.
+//  Created by mszdream on 2021/6/27.
+//  Copyright (c) 2021 mszdream. All rights reserved.
 //
 
 import Foundation

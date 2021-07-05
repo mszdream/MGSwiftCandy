@@ -2,7 +2,8 @@
 //  MGUserDefaults.swift
 //  MGSwiftCandy
 //
-//  Created by msz on 2021/6/29.
+//  Created by mszdream on 2021/6/29.
+//  Copyright (c) 2021 mszdream. All rights reserved.
 //
 
 import Foundation
