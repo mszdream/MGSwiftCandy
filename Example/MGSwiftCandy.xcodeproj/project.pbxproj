@@ -36,6 +36,8 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		CE66C9D22683176100C34A73 /* MGTestSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66C9D12683176100C34A73 /* MGTestSizeViewController.swift */; };
 		CE9EBDC667ECE6ECC11718E8 /* Pods_MGSwiftCandy_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82FFFF121C4E068BF9771D45 /* Pods_MGSwiftCandy_Tests.framework */; };
+		CEC5D0EF26AA81F000008607 /* MGTestMockDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5D0EE26AA81F000008607 /* MGTestMockDataViewController.swift */; };
+		CEC5D0F226AA9D1F00008607 /* MGTestToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5D0F126AA9D1F00008607 /* MGTestToolsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		C3CC11189133496515A58BA2 /* Pods-MGSwiftCandy_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGSwiftCandy_Tests.debug.xcconfig"; path = "Target Support Files/Pods-MGSwiftCandy_Tests/Pods-MGSwiftCandy_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C76501370DDE4CCA9E71C41E /* Pods-MGSwiftCandy_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGSwiftCandy_Example.debug.xcconfig"; path = "Target Support Files/Pods-MGSwiftCandy_Example/Pods-MGSwiftCandy_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		CE66C9D12683176100C34A73 /* MGTestSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGTestSizeViewController.swift; sourceTree = "<group>"; };
+		CEC5D0EE26AA81F000008607 /* MGTestMockDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGTestMockDataViewController.swift; sourceTree = "<group>"; };
+		CEC5D0F126AA9D1F00008607 /* MGTestToolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGTestToolsViewController.swift; sourceTree = "<group>"; };
 		FA1A324D4C9A347DADECEC61 /* Pods-MGSwiftCandy_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGSwiftCandy_Tests.release.xcconfig"; path = "Target Support Files/Pods-MGSwiftCandy_Tests/Pods-MGSwiftCandy_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,6 +207,8 @@
 		2A7E1C112680C66F00C38E0D /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				CEC5D0F026AA9CF400008607 /* Tools */,
+				CEC5D0ED26AA81C700008607 /* MockData */,
 				2A43DDEF268B65E00074AE8E /* UserDefaults */,
 				2A5FBD8A2688AB6A00690056 /* keychain */,
 				2A0E16DE2683662F006BE404 /* Printer */,
@@ -422,6 +428,22 @@
 			path = Size;
 			sourceTree = "<group>";
 		};
+		CEC5D0ED26AA81C700008607 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				CEC5D0EE26AA81F000008607 /* MGTestMockDataViewController.swift */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		CEC5D0F026AA9CF400008607 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				CEC5D0F126AA9D1F00008607 /* MGTestToolsViewController.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -608,6 +630,7 @@
 				2A5FBD8C2688AB7B00690056 /* MGTestKeychainViewController.swift in Sources */,
 				CE66C9D22683176100C34A73 /* MGTestSizeViewController.swift in Sources */,
 				2A43DDF1268B66030074AE8E /* MGTestUserDefaultsViewController.swift in Sources */,
+				CEC5D0EF26AA81F000008607 /* MGTestMockDataViewController.swift in Sources */,
 				2A6D773F2691679300847FFD /* MGTestDoubleViewController.swift in Sources */,
 				2A6D773D2691678100847FFD /* MGTestFloatViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
@@ -617,6 +640,7 @@
 				2A7E1C302680C66F00C38E0D /* MGTestScreenViewController.swift in Sources */,
 				2A7E1C342680C66F00C38E0D /* MGTestStringViewController.swift in Sources */,
 				2A7E1C312680C66F00C38E0D /* MGTestViewViewController.swift in Sources */,
+				CEC5D0F226AA9D1F00008607 /* MGTestToolsViewController.swift in Sources */,
 				2A7E1C372680C66F00C38E0D /* MGModelProtocol.swift in Sources */,
 				2A6D7741269167B300847FFD /* MGTestBoolViewController.swift in Sources */,
 			);
@@ -776,9 +800,10 @@
 				INFOPLIST_FILE = MGSwiftCandy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D DEBUG";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D DEBUG -D MOCKDATA";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mszdream.MGSwiftCandy-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
 			};

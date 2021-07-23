@@ -69,6 +69,12 @@ class ViewController: MGBaseViewController {
             #if MGSwiftCandy_Tools_UserDefaults
             addItem(title: "UserDefaults", className: "MGTestUserDefaultsViewController", section: index)
             #endif
+            #if MGSwiftCandy_Tools_MockData
+            addItem(title: "MockData", className: "MGTestMockDataViewController", section: index)
+            #endif
+            #if MGSwiftCandy_Tools_Tools
+            addItem(title: "Tools", className: "MGTestToolsViewController", section: index)
+            #endif
             index += 1
             titles.append("Tools")
             #endif
@@ -90,8 +96,8 @@ class ViewController: MGBaseViewController {
     
     override func cellClicked(model: MGModelProtocol) {
         guard let model = model as? MGListItemModel,
-              let vc: UIViewController = MGTools.mg.create(className: model.className),
-              let topVc = UIViewController.mg.topViewController() else {
+              let vc: UIViewController = UIViewController.create(className: model.className),
+              let topVc = UIViewController.topViewController() else {
             return
         }
         
@@ -118,4 +124,39 @@ extension ViewController {
 }
 
  
-extension MGObject: MGCreate {}
+//extension MGObject: MGCreate {}
+
+extension UIViewController {
+    /// Create instance with class name
+    static func create(className: String) -> UIViewController? {
+        guard className.count > 0,
+              let klass: AnyClass = NSClassFromString("MGSwiftCandy_Example." + className),
+              let typeClass = klass as? UIViewController.Type else {
+            return nil
+        }
+        
+        let instance = typeClass.init()
+        return instance
+    }
+    
+    /// Get top view controller
+    static func topViewController() -> UIViewController? {
+        let rootVC = UIApplication.shared.keyWindow?.rootViewController
+        var resultVC = self.topViewController(vc: rootVC)
+        while resultVC?.presentedViewController != nil {
+            resultVC = self.topViewController(vc: resultVC?.presentedViewController)
+        }
+        return resultVC
+    }
+    
+    fileprivate static func topViewController(vc: UIViewController?) -> UIViewController? {
+        if let ctrl = vc as? UINavigationController {
+            return self.topViewController(vc: ctrl.topViewController)
+        } else if let ctrl = vc as? UITabBarController {
+            return self.topViewController(vc: ctrl.selectedViewController)
+        } else {
+            return vc
+        }
+    }
+    
+}

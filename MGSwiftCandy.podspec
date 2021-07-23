@@ -112,6 +112,12 @@ Pod::Spec.new do |s|
             "OTHER_SWIFT_FLAGS" => "-D #{sss.name.tr!("//", "_")}"
         }
     end
+    ss.subspec "MockData" do |sss|
+        sss.source_files = 'MGSwiftCandy/Classes/Tools/MockData/**/*'
+        sss.xcconfig = {
+            "OTHER_SWIFT_FLAGS" => "-D #{sss.name.tr!("//", "_")}"
+        }
+    end
   end
   
   # s.source_files = 'MGSwiftCandy/Classes/**/*'

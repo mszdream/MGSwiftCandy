@@ -20,6 +20,7 @@ PODS:
   - MGSwiftCandy/Tools (1.1.0):
     - MGSwiftCandy/Tools/Eventer (= 1.1.0)
     - MGSwiftCandy/Tools/keychain (= 1.1.0)
+    - MGSwiftCandy/Tools/MockData (= 1.1.0)
     - MGSwiftCandy/Tools/Printer (= 1.1.0)
     - MGSwiftCandy/Tools/Tools (= 1.1.0)
     - MGSwiftCandy/Tools/UserDefaults (= 1.1.0)
@@ -27,6 +28,7 @@ PODS:
     - MGSwiftCandy/Core
   - MGSwiftCandy/Tools/keychain (1.1.0):
     - MGSwiftCandy/Core
+  - MGSwiftCandy/Tools/MockData (1.1.0)
   - MGSwiftCandy/Tools/Printer (1.1.0):
     - MGSwiftCandy/Tools/Tools
   - MGSwiftCandy/Tools/Tools (1.1.0):
@@ -48,9 +50,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MGSwiftCandy: c7c0e7cf397ede37cdb2b79616845887cc20ff6e
+  MGSwiftCandy: dedcee66dfa82d38d83f52965465bd9da6818b14
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: a97e356f9f7006e2a7f7462e92ec682864aa64c1
+PODFILE CHECKSUM: be0d069ee4ebde89c13ae3276fe102eafad3c673
 
 COCOAPODS: 1.10.1

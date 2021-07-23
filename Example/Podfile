@@ -19,6 +19,7 @@ target 'MGSwiftCandy_Example' do
 #  pod 'MGSwiftCandy/Tools/Printer', :path => '../'
 #  pod 'MGSwiftCandy/Tools/Tools', :path => '../'
 #  pod 'MGSwiftCandy/Tools/UserDefaults', :path => '../'
+#  pod 'MGSwiftCandy/Tools/MockData', :path => '../'
   
   pod 'SnapKit'
   
