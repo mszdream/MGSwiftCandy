@@ -2,8 +2,8 @@
 //  MGTestDoubleViewController.swift
 //  MGSwiftCandy_Example
 //
-//  Created by msz on 2021/7/4.
-//  Copyright © 2021 CocoaPods. All rights reserved.
+//  Created by mszdream on 2021/7/4.
+//  Copyright © 2021 mszdream. All rights reserved.
 //
 
 #if MGSwiftCandy_Extension_Swift

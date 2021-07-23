@@ -2,8 +2,8 @@
 //  MGTestToolsViewController.swift
 //  MGSwiftCandy_Example
 //
-//  Created by hello on 2021/7/23.
-//  Copyright © 2021 CocoaPods. All rights reserved.
+//  Created by mszdream on 2021/7/23.
+//  Copyright © 2021 mszdream. All rights reserved.
 //
 
 #if MGSwiftCandy_Tools_Tools
