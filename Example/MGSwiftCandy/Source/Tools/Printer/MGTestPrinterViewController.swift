@@ -13,9 +13,14 @@ import MGSwiftCandy
 
 class MGTestPrinterViewController: MGBaseViewController {
     override func generatingData() {
-        let log = "hello baby"
+        let log = "hello\nbaby"
         var target = ""
+        MGPrinter.mg.printer(log)
         MGPrinter.mg.printer(log, target: &target)
+        addItem(title: "printer", desc: target, section: 0)
+        
+        MGPrinter.mg.printer(log, tag: "123")
+        MGPrinter.mg.printer(log, tag: "123", target: &target)
         addItem(title: "printer", desc: target, section: 0)
     }
     

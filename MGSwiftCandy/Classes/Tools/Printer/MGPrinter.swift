@@ -89,15 +89,15 @@ public extension MGWrapper_Mg where MGOriginType: MGPrinter {
             return "nil"
         })
         
-        let sep = "----------------------- \(tag ?? "")"
+        let strTag = ((tag ?? "").count > 0) ? "\(tag!) " : ""
         let results: [MGString] = [
-            sep,
+            "-------------- \(strTag)begin -------------",
             "▷ [\(type.symbol)] \(tag ?? type.tag)",
             "▷ [📃] \(MGString(describing: MGURL(fileURLWithPath: file).lastPathComponent)) [\(line)]",
             "▷ [✂️] \(function)",
             "▷ [⏰] " + dateFormat(date: MGDate()),
             "\(msgs.joined(separator: separator))",
-            sep
+            "---------------- \(strTag)end ------------",
         ]
         
         if var target = target {
