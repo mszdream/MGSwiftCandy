@@ -19,6 +19,9 @@ DerivedData
 *.hmap
 *.ipa
 
+Example/MGSwiftCandy.xcworkspace/
+Example/Podfile.lock
+
 # Bundler
 .bundle
 
